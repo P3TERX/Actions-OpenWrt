@@ -44,7 +44,7 @@ jobs:
         ln -sf files openwrt/files
         chmod +x diy.sh
         ./diy.sh
-        cp .config openwrt
+        [ -e ".config" ] && cp .config openwrt
         cd openwrt
         make defconfig
 
