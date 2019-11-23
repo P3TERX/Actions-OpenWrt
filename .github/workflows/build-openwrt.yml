@@ -43,9 +43,9 @@ jobs:
         ln -sf packages openwrt/package/diy-packages
         ln -sf files openwrt/files
         chmod +x diy.sh
-        ./diy.sh
         [ -e ".config" ] && cp .config openwrt
         cd openwrt
+        ../diy.sh
         make defconfig
 
     - name: Download package
