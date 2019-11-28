@@ -55,18 +55,19 @@ jobs:
         sudo -E apt-get clean
 
     - name: Clone source code
-      run: |
-        git clone https://github.com/coolsnowwolf/lede openwrt
-        cd openwrt
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
+      run: git clone https://github.com/coolsnowwolf/lede openwrt
 
-    - name: Load Custom Configuration
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Load custom configuration
       run: |
-        ln -sf packages openwrt/package/diy-packages
-        ln -sf files openwrt/files
+        [ -e files ] && mv files openwrt/files
+        [ -e .config ] && mv .config openwrt
         chmod +x diy.sh
-        [ -e ".config" ] && cp .config openwrt
         cd openwrt
         ../diy.sh
         make defconfig
