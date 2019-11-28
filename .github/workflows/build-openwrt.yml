@@ -55,7 +55,7 @@ jobs:
         sudo -E apt-get clean
 
     - name: Clone source code
-      run: git clone https://github.com/coolsnowwolf/lede openwrt
+      run: git clone https://github.com/a520ass/openwrt openwrt
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
