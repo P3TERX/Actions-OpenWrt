@@ -55,7 +55,10 @@ jobs:
         sudo -E apt-get clean
 
     - name: Clone source code
-      run: git clone https://github.com/coolsnowwolf/lede openwrt
+      env: 
+        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_BRANCH: master
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
