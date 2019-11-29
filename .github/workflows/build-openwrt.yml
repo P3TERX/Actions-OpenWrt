@@ -55,14 +55,20 @@ jobs:
         sudo -E apt-get clean
 
     - name: Clone source code
-      run: git clone https://github.com/coolsnowwolf/lede openwrt
+      run: git clone -b openwrt-19.07 --single-branch https://github.com/openwrt/openwrt openwrt
+        
+    - name: Add fullconenat
+      run: cd openwrt && git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
 
+    - name: Add rosy theme
+      run: cd openwrt && echo 'src-git rosy https://github.com/rosywrt/luci.git' >> feeds.conf.default
+        
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
-
+      
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
