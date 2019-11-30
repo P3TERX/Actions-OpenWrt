@@ -58,7 +58,14 @@ jobs:
       run: git clone -b openwrt-19.07 --single-branch https://github.com/openwrt/openwrt openwrt
         
     - name: Add fullconenat
-      run: cd openwrt && git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
+      run: |
+        cd openwrt && git clone -b master --single-branch https://github.com/LGA1150/openwrt-fullconenat package/fullconenat
+        # fullconenat patch
+        mkdir -p package/network/config/firewall/patches
+        wget -O package/network/config/firewall/patches/fullconenat.patch https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/fullconenat.patch
+        wget -O- https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/Makefile.patch | patch -p1
+        pushd feeds/luci
+        wget -O- https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/luci.patch | patch -p1
 
     - name: Add rosy theme
       run: cd openwrt && echo 'src-git rosy https://github.com/rosywrt/luci.git' >> feeds.conf.default
