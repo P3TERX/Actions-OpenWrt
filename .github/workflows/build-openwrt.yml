@@ -73,6 +73,7 @@ jobs:
         chmod +x diy.sh
         cd openwrt
         ../diy.sh
+        sed -i 's/^[ \t]*//g' ./.config
         make defconfig
 
     - name: Download package
