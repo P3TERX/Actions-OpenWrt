@@ -56,7 +56,7 @@ jobs:
 
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_URL: https://github.com/LGA1150/openwrt
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
@@ -81,14 +81,14 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build
-      run: |
-        cd openwrt
-        echo -e "$(nproc) thread build."
-        make -j$(nproc) V=s
+#   - name: Build
+#     run: |
+#       cd openwrt
+#       echo -e "$(nproc) thread build."
+#       make -j$(nproc) V=s
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt/bin
+        path: openwrt/dl
