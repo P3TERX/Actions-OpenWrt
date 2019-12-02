@@ -69,9 +69,11 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
+      env:
+        CONFIG_FILE: '.config'
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e .config ] && mv .config openwrt
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x diy.sh
         cd openwrt
         ../diy.sh
