@@ -69,7 +69,7 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e .config ] && mv .config openwrt
+        [ -e acrh17.config ] && mv acrh17.config openwrt/.config
         chmod +x diy.sh
         cd openwrt
         ../diy.sh
