@@ -66,54 +66,14 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
+      env:
+        CONFIG_FILE: 'acrh17.config'
       run: |
         [ -e files ] && mv files openwrt/files
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x diy.sh
         cd openwrt
         ../diy.sh
-        
-        cat >> .config <<EOF
-
-        CONFIG_TARGET_ipq40xx=y
-        CONFIG_TARGET_ipq40xx_DEVICE_asus_rt-acrh17=y
-        CONFIG_TARGET_BOARD="ipq40xx"
-        CONFIG_ARIA2_BITTORRENT=y
-        CONFIG_ARIA2_NOXML=y
-        CONFIG_ARIA2_OPENSSL=y
-        CONFIG_ARIA2_WEBSOCKET=y
-        CONFIG_PACKAGE_aria2=y
-        CONFIG_PACKAGE_ariang=y
-        # CONFIG_PACKAGE_ca-bundle is not set
-        CONFIG_PACKAGE_frpc=y
-        CONFIG_PACKAGE_hd-idle=y
-        CONFIG_PACKAGE_kcptun-client=y
-        # CONFIG_PACKAGE_libcurl is not set
-        # CONFIG_PACKAGE_libevent2 is not set
-        CONFIG_PACKAGE_luci-app-aria2=y
-        CONFIG_PACKAGE_luci-app-frpc=y
-        CONFIG_PACKAGE_luci-app-hd-idle=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-        # CONFIG_PACKAGE_luci-app-transmission is not set
-        CONFIG_PACKAGE_luci-app-v2ray-server=y
-        CONFIG_PACKAGE_luci-app-verysync=y
-        # CONFIG_PACKAGE_luci-app-xlnetacc is not set
-        CONFIG_PACKAGE_luci-i18n-aria2-zh-cn=y
-        CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y
-        CONFIG_PACKAGE_luci-i18n-v2ray-server-zh-cn=y
-        CONFIG_PACKAGE_luci-i18n-verysync-zh-cn=y
-        CONFIG_PACKAGE_luci-theme-material=y
-        CONFIG_PACKAGE_screen=y
-        CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
-        # CONFIG_PACKAGE_transmission-daemon-openssl is not set
-        # CONFIG_PACKAGE_transmission-web-control is not set
-        CONFIG_PACKAGE_verysync=y
-
-        EOF
-
         sed -i 's/^[ \t]*//g' ./.config
         make defconfig
 
