@@ -71,12 +71,13 @@ jobs:
     - name: Load custom configuration
       env:
         CONFIG_FILE: '.config'
+        DIY_SH: 'diy.sh'
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x diy.sh
+        chmod +x $DIY_SH
         cd openwrt
-        ../diy.sh
+        ../$DIY_SH
         make defconfig
 
     - name: Download package
