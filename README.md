@@ -18,6 +18,19 @@ Build OpenWrt using GitHub Actions
 - Push `.config` file to the GitHub repository, and the build starts automatically.Progress can be viewed on the Actions page.
 - When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
 
+## Acknowledgments
+
+- [Microsoft](https://www.microsoft.com)
+- [Microsoft Azure](https://azure.microsoft.com)
+- [GitHub](https://github.com)
+- [GitHub Actions](https://github.com/features/actions)
+- [tmate](https://github.com/tmate-io/tmate)
+- [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate)
+- [csexton/debugger-action](https://github.com/csexton/debugger-action)
+- [Cisco](https://www.cisco.com/)
+- [OpenWrt](https://github.com/openwrt/openwrt)
+- [Lean's OpenWrt](https://github.com/coolsnowwolf/lede)
+
 ## License
 
 [MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE) © P3TERX
