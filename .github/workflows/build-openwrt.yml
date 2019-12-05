@@ -13,6 +13,8 @@ on:
   push:
     branches: 
       - master
+    paths:
+      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
@@ -67,13 +69,19 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
+      env:
+        CONFIG_FILE: '.config'
+        DIY_SH: 'diy.sh'
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e .config ] && mv .config openwrt
-        chmod +x diy.sh
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        chmod +x $DIY_SH
         cd openwrt
-        ../diy.sh
+        ../$DIY_SH
         make defconfig
+
+#    - name: SSH connection to Actions
+#      uses: P3TERX/debugger-action@master
 
     - name: Download package
       run: |
@@ -87,8 +95,14 @@ jobs:
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
-    - name : Upload artifact
+    - name : Upload packages
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt
-        path: openwrt/bin
+        name: OpenWrt packages
+        path: openwrt/bin/packages
+
+    - name : Upload targets
+      uses: actions/upload-artifact@master
+      with:
+        name: OpenWrt firmware
+        path: openwrt/bin/targets
