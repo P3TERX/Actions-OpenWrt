@@ -89,20 +89,28 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build
+    - name: Multi-thread compile
       run: |
         cd openwrt
-        echo -e "$(nproc) thread build."
-        make -j$(nproc) V=s
+        echo -e "$(nproc) thread compile"
+        make -j$(nproc)
+
+    - name: Single-thread compile
+      if: failure()
+      run: |
+        cd openwrt
+        make -j1 V=s
 
     - name : Upload packages
       uses: actions/upload-artifact@master
+      if: always()
       with:
         name: OpenWrt packages
         path: openwrt/bin/packages
 
     - name : Upload targets
       uses: actions/upload-artifact@master
+      if: always()
       with:
         name: OpenWrt firmware
         path: openwrt/bin/targets
