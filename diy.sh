@@ -13,5 +13,5 @@ git clone https://github.com/tty228/luci-app-serverchan package
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package
 git clone https://github.com/rosywrt/luci-theme-rosy package
 git clone https://github.com/rosywrt/luci-theme-purple package
-git clone https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash package
+#git clone https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash package
 #git clone https://github.com/Lienol/openwrt-package package
