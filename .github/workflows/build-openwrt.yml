@@ -101,14 +101,14 @@ jobs:
         cd openwrt
         make -j1 V=s
 
-    - name : Upload packages
+    - name: Upload packages
       uses: actions/upload-artifact@master
       if: always()
       with:
         name: OpenWrt packages
         path: openwrt/bin/packages
 
-    - name : Upload targets
+    - name: Upload targets
       uses: actions/upload-artifact@master
       if: always()
       with:
