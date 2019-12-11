@@ -56,6 +56,7 @@ jobs:
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
+        sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
     - name: Clone source code
       env: 

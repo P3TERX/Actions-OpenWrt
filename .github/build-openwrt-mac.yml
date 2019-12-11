@@ -37,6 +37,7 @@ jobs:
         echo "::add-path::/usr/local/opt/gnu-getopt/bin"
         echo "::add-path::/usr/local/opt/coreutils/libexec/gnubin"
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
+        sudo systemsetup -settimezone "Asia/Shanghai"
 
     - name: Clone source code
       working-directory: /Volumes/OpenWrt
