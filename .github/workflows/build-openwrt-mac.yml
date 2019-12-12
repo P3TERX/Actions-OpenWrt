@@ -1,4 +1,5 @@
 #=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions(macOS)
 # Lisence: MIT
 # Author: P3TERX
@@ -8,13 +9,14 @@
 name: Build OpenWrt (macOS)
 
 on: 
-  release:
-    types: [published]
-  push:
-    branches: 
-      - master
-    paths:
-      - '.config'
+  public
+#  release:
+#    types: [published]
+#  push:
+#    branches: 
+#      - master
+#    paths:
+#      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
