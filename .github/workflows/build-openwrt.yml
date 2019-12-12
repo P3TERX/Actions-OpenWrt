@@ -90,16 +90,23 @@ jobs:
         cd openwrt
         make -j1 V=s
 
-    - name : Upload packages
+    - name: Upload bin directory
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: OpenWrt packages
-        path: openwrt/bin/packages
+        name: OpenWrt_bin
+        path: openwrt/bin
 
-    - name : Upload targets
+    - name: Organize files
+      if: always()
+      run: |
+        cd openwrt/bin/targets/*/*
+        rm -rf packages
+        echo "::set-env name=FIRMWARE::$(pwd)"
+
+    - name: Upload firmware
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: OpenWrt firmware
-        path: openwrt/bin/targets
+        name: OpenWrt_firmware
+        path: ${{ env.FIRMWARE }}
