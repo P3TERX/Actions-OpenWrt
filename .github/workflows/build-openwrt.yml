@@ -34,7 +34,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         echo "Deleting files, please wait ..."
-        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d/*
         sudo swapoff /swapfile
         sudo rm -f /swapfile
         #docker rmi `docker images -q`
