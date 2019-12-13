@@ -10,11 +10,11 @@ name: Build OpenWrt (macOS)
 
 on: 
   public
-#  release:
-#    types: [published]
-#  push:
-#    branches: 
-#      - master
+   release:
+     types: [published]
+   push:
+     branches: 
+       - master
 #    paths:
 #      - '.config'
 #  schedule:
