@@ -33,11 +33,11 @@ jobs:
     - name: Initialization environment
       run: |
         brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep wget quilt xz gnu-sed
-        brew ln gnu-getopt --force
-        hdiutil create -size 60g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
-        hdiutil attach OpenWrt.sparseimage
         echo "::add-path::/usr/local/opt/gnu-getopt/bin"
         echo "::add-path::/usr/local/opt/coreutils/libexec/gnubin"
+        echo "::add-path::/usr/local/opt/gnu-sed/libexec/gnubin"
+        hdiutil create -size 60g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
+        hdiutil attach OpenWrt.sparseimage
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
         sudo systemsetup -settimezone "Asia/Shanghai"
 
@@ -49,7 +49,7 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /Volumes/OpenWrt/openwrt $GITHUB_WORKSPACE/openwrt
-        gsed -i "s/grep Apple.LLVM/grep -E 'Apple.(LLVM|clang)'/g" openwrt/include/prereq-build.mk
+        sed -i "s/grep Apple.LLVM/grep -E 'Apple.(LLVM|clang)'/g" openwrt/include/prereq-build.mk
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
