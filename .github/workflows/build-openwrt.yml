@@ -6,20 +6,20 @@
 # Blog: https://p3terx.com
 #=================================================
 
-#name: Build OpenWrt
+name: Build OpenWrt
 
-#on: 
- # release:
- #   types: [published]
- # push:
-   # branches: 
-   #   - master
-  #  paths:
+on: 
+  release:
+    types: [published]
+  push:
+    branches: 
+      - master
+    paths:
       - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-  #watch:
- #  types: [started]
+  watch:
+   types: [started]
 
 jobs:
   build:
@@ -48,10 +48,10 @@ jobs:
 
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
-        REPO_BRANCH: master
-        #REPO_URL: https://github.com/openwrt/openwrt.git
-        #REPO_BRANCH: openwrt-19.07
+        #REPO_URL: https://github.com/coolsnowwolf/lede
+        #REPO_BRANCH: master
+        REPO_URL: https://github.com/openwrt/openwrt.git
+        REPO_BRANCH: openwrt-18.06
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update feeds
