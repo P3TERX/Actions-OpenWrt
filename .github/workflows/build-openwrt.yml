@@ -6,15 +6,15 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt
+#name: Build OpenWrt
 
-on: 
-  release:
-    types: [published]
-  push:
-    branches: 
-      - master
-    paths:
+#on: 
+ # release:
+ #   types: [published]
+ # push:
+   # branches: 
+   #   - master
+  #  paths:
       - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
