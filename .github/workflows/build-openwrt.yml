@@ -48,10 +48,10 @@ jobs:
 
     - name: Clone source code
       env: 
-        #REPO_URL: https://github.com/coolsnowwolf/lede
-        #REPO_BRANCH: master
-        REPO_URL: https://github.com/openwrt/openwrt.git
-        REPO_BRANCH: openwrt-18.06
+        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_BRANCH: master
+        #REPO_URL: https://github.com/openwrt/openwrt.git
+        #REPO_BRANCH: openwrt-18.06
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update feeds
