@@ -71,7 +71,7 @@ jobs:
         make defconfig
 
     - name: SSH connection to Actions
-     uses: P3TERX/debugger-action@master
+      uses: p3terx/debugger-action@master
 
     - name: Download package
       run: |
