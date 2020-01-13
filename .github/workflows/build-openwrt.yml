@@ -1,8 +1,10 @@
-@@ -5,109 +5,69 @@
+#=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
 # Author: P3TERX
 # Blog: https://p3terx.com
 #=================================================
-name: X64-My-OpenWrt-CI
 
 name: Build OpenWrt
 
@@ -14,27 +16,19 @@ on:
       - master
     paths:
       - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
+  schedule:
+    - cron: 0 8 * * 5
   watch:
     types: [started]
-on:
-  schedule:
-    - cron: 0 22 * * *
-#  push:
-#    branches: 
-#      - master
 
 jobs:
   build:
     runs-on: ubuntu-18.04
-    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@master
 
-    - uses: actions/checkout@v1
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -51,16 +45,10 @@ jobs:
         sudo -E apt-get -qq clean
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
         sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-          echo "Deleting files, please wait ..."
-          sudo -E apt-get -qq update
-          sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler
-          sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
-        REPO_URL: https://github.com/Lienol/openwrt
-        REPO_BRANCH: my-19.07-full
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update feeds
@@ -73,8 +61,6 @@ jobs:
       env:
         CONFIG_FILE: '.config'
         DIY_SH: 'diy.sh'
-
-    - name: Costom configure file
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
@@ -86,26 +72,15 @@ jobs:
       uses: P3TERX/debugger-action@master
 
     - name: Download package
-          cd openwrt
-          rm -f .config
-          cp ../my-1907-x64 .config
-    - name: Make download
       run: |
         cd openwrt && make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-          cd openwrt
-          make download -j8
-          find dl -size -1024c -exec ls -l {} \;
-          find dl -size -1024c -exec rm -f {} \;
     - name: Multi-thread compile
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc)
-          cd openwrt
-          echo -e "$(nproc) thread build."
-          make -j$(nproc) V=s
     - name: Single-thread compile
       if: failure()
       run: |
@@ -120,23 +95,13 @@ jobs:
 
     - name: Organize files
       if: always()
-          cd openwrt
-          make -j1 V=s
-    - name: Assemble artifact
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
         echo "::set-env name=FIRMWARE::$(pwd)"
     - name: Upload firmware
-          rm -rf ./artifact/
-          mkdir -p ./artifact/
-          find openwrt/bin/targets/ -name "*sysupgrade*bin*" | xargs -i mv -f {} ./artifact/
-          find openwrt/bin/targets/ -name "*combined*img*" | xargs -i mv -f {} ./artifact/
-    - name: Upload artifact
       uses: actions/upload-artifact@master
       if: always()
       with:
         name: OpenWrt_firmware
         path: ${{ env.FIRMWARE }}
-        name: OpenWrt firmware
-        path: ./artifact/
