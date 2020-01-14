@@ -13,7 +13,7 @@ on:
     types: [published]
   push:
     branches: 
-      - master
+      - Openwrt-SSH
     paths:
       - '.config'
 #  schedule:
@@ -27,7 +27,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@Openwrt-SSH
 
     - name: Initialization environment
       env:
@@ -70,8 +70,8 @@ jobs:
         ../$DIY_SH
         make defconfig
 
-#    - name: SSH connection to Actions
-#      uses: P3TERX/debugger-action@master
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@Openwrt-SSH
 
     - name: Download package
       run: |
@@ -92,7 +92,7 @@ jobs:
         make -j1 V=s
 
     - name: Upload bin directory
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@Openwrt-SSH
       if: always()
       with:
         name: OpenWrt_bin
@@ -106,7 +106,7 @@ jobs:
         echo "::set-env name=FIRMWARE::$(pwd)"
 
     - name: Upload firmware
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@Openwrt-SSH
       if: always()
       with:
         name: OpenWrt_firmware
