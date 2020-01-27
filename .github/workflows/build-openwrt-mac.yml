@@ -32,9 +32,12 @@ jobs:
 
     - name: Initialization environment
       run: |
-        brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep wget quilt xz gnu-sed
-        echo "::add-path::/usr/local/opt/gnu-getopt/bin"
+        brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep wget quilt xz
         echo "::add-path::/usr/local/opt/coreutils/libexec/gnubin"
+        echo "::add-path::/usr/local/opt/findutils/libexec/gnubin"
+        echo "::add-path::/usr/local/opt/gnu-getopt/bin"
+        echo "::add-path::/usr/local/opt/gnu-tar/libexec/gnubin"
+        echo "::add-path::/usr/local/opt/grep/libexec/gnubin"
         echo "::add-path::/usr/local/opt/gnu-sed/libexec/gnubin"
         hdiutil create -size 60g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
         hdiutil attach OpenWrt.sparseimage
