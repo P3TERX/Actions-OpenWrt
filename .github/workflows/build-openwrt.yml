@@ -63,6 +63,7 @@ jobs:
 
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+      run: cd lede/package &&  git clone https://github.com/Lienol/openwrt-package.git
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
