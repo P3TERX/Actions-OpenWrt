@@ -1,0 +1,158 @@
+#=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
+
+name: Build G-Dock Lean's OpenWrt
+
+on: 
+  release:
+    types: [published]
+  push:
+    branches: 
+      - master
+    paths:
+      - 'gdock-lean-openwrt.config'
+  schedule:
+    - cron: 0 18 * * *
+#  watch:
+#    types: [started]
+
+env:
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
+  CONFIG_FILE: gdock-lean-openwrt.config
+  DIY_SH: lean-openwrt.sh
+  FREE_UP_DISK: true
+  SSH_ACTIONS: false
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo swapoff /swapfile
+        sudo rm -rf /swapfile /etc/apt/sources.list.d/*
+        sudo -E apt-get -qq update
+        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler
+        curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
+    - name: Free up disk space
+      if: env.FREE_UP_DISK == 'true'
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo rm -rf /usr/share/dotnet
+        docker rmi `docker images -q`
+        sudo -E apt-get -q purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
+    - name: Clone source code
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+
+    - name: Update Feeds
+      run: |
+       cd openwrt
+       echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
+       ./scripts/feeds update -a
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
+    - name: Load custom configuration
+      run: |
+        [ -e files ] && mv files openwrt/files
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        chmod +x $DIY_SH
+        cd openwrt
+        ../$DIY_SH
+        make defconfig
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
+      if: env.SSH_ACTIONS == 'true'
+
+    - name: Download package
+      id: package
+      run: |
+        cd openwrt
+        make download -j8
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
+    - name: Compile the firmware
+      id: compile
+      run: |
+        cd openwrt
+        echo -e "$(nproc) thread compile"
+        make -j$(nproc) || make -j1 V=s
+        echo "::set-output name=status::success"
+    - name: Upload Config
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: config.seed
+        path: openwrt/bin/targets/ipq40xx/generic/config.seed
+        
+    - name: Upload Packages
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: packages
+        path: openwrt/bin/packages/arm_cortex-a7_neon-vfpv4/
+        
+    - name: Upload Packages Info
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: openwrt-ipq40xx-p2w_r619ac-128m.manifest
+        path: openwrt/bin/targets/ipq40xx/generic/openwrt-ipq40xx-p2w_r619ac-128m.manifest
+        
+    - name: Upload Kernel Packages
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: kernel-packages
+        path: openwrt/bin/targets/ipq40xx/generic/packages/
+        
+    - name: Upload RootFS Archive
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: openwrt-ipq40xx-p2w_r619ac-128m-rootfs.tar.gz
+        path: openwrt/bin/targets/ipq40xx/generic/openwrt-ipq40xx-p2w_r619ac-128m-rootfs.tar.gz
+        
+    - name: Upload SquashFS Factory Image
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: openwrt-ipq40xx-p2w_r619ac-128m-squashfs-nand-factory.ubi
+        path: openwrt/bin/targets/ipq40xx/generic/openwrt-ipq40xx-p2w_r619ac-128m-squashfs-nand-factory.ubi
+        
+    - name: Upload SquashFS Sysupgrade Image
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: openwrt-ipq40xx-p2w_r619ac-128m-squashfs-nand-sysupgrade.bin
+        path: openwrt/bin/targets/ipq40xx/generic/openwrt-ipq40xx-p2w_r619ac-128m-squashfs-nand-sysupgrade.bin
+        
+    - name: Upload Fit uImage
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: openwrt-ipq40xx-p2w_r619ac-128m-initramfs-fit-zImage.itb
+        path: openwrt/bin/targets/ipq40xx/generic/openwrt-ipq40xx-p2w_r619ac-128m-initramfs-fit-zImage.itb
+        
+    - name: Upload Images Sha256sums
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success'
+      with:
+        name: sha256sums
+        path: openwrt/bin/targets/ipq40xx/generic/sha256sums
