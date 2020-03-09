@@ -6,7 +6,6 @@
 # Blog: https://p3terx.com
 #=================================================
 name: orangepi-zero-plus
-
 on:
   release:
     types: published
