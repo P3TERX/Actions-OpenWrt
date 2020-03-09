@@ -5,7 +5,7 @@
 # Author: P3TERX
 # Blog: https://p3terx.com
 #=================================================
-name: Build OpenWrt
+name: orangepi-zero-plus
 
 on:
   release:
