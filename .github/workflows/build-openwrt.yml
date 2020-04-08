@@ -26,7 +26,7 @@ env:
   REPO_BRANCH: dev-19.07
   CONFIG_FILE: newifi3.config
   DIY_SH: diy.sh
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
