@@ -9,6 +9,7 @@
 name: Build OpenWrt
 
 on:
+  repository_dispatch:
   release:
     types: published
   push:
@@ -73,7 +74,7 @@ jobs:
 
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: Download package
       id: package
