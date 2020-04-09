@@ -28,7 +28,8 @@ Build OpenWrt using GitHub Actions
 - [OpenWrt](https://github.com/openwrt/openwrt)
 - [Lean's OpenWrt](https://github.com/coolsnowwolf/lede)
 - [Cowtransfer](https://cowtransfer.com)
-- [Mikubill/cowtransfer-uploader](https://github.com/Mikubill/cowtransfer-uploader)
+- [WeTransfer](https://wetransfer.com/)
+- [Mikubill/transfer](https://github.com/Mikubill/transfer)
 
 ## License
 
