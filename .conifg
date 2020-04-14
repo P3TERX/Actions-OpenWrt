@@ -1,0 +1,40 @@
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7621=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
+CONFIG_PACKAGE_adbyby=m
+CONFIG_PACKAGE_boost=y
+CONFIG_PACKAGE_boost-date_time=y
+CONFIG_PACKAGE_boost-program_options=y
+CONFIG_PACKAGE_boost-system=y
+CONFIG_PACKAGE_ipt2socks=y
+CONFIG_PACKAGE_kcptun-client=y
+CONFIG_PACKAGE_libevent2=y
+CONFIG_PACKAGE_libstdcpp=y
+CONFIG_PACKAGE_luci-app-adbyby-plus=m
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
+# CONFIG_PACKAGE_luci-app-unblockmusic is not set
+# CONFIG_PACKAGE_luci-app-vlmcsd is not set
+# CONFIG_PACKAGE_luci-app-vsftpd is not set
+CONFIG_PACKAGE_luci-i18n-adbyby-plus-zh-cn=m
+CONFIG_PACKAGE_luci-theme-argon=m
+CONFIG_PACKAGE_luci-theme-material=m
+CONFIG_PACKAGE_luci-theme-netgear=m
+CONFIG_PACKAGE_redsocks2=y
+CONFIG_PACKAGE_trojan=y
+CONFIG_PACKAGE_v2ray=y
+CONFIG_PACKAGE_v2ray-plugin=y
+# CONFIG_PACKAGE_vlmcsd is not set
+# CONFIG_PACKAGE_vsftpd-alt is not set
+CONFIG_V2RAY_COMPRESS_UPX=y
+CONFIG_V2RAY_DISABLE_NONE=y
+CONFIG_V2RAY_EXCLUDE_ASSETS=y
+CONFIG_V2RAY_EXCLUDE_V2CTL=y
+CONFIG_V2RAY_JSON_INTERNAL=y
+CONFIG_boost-compile-visibility-hidden=y
+CONFIG_boost-runtime-shared=y
+CONFIG_boost-static-and-shared-libs=y
+CONFIG_boost-variant-release=y
