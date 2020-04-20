@@ -32,6 +32,8 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
+  UPLOAD_BIN_COWTRANSFER: false
+  UPLOAD_BIN_WETRANSFER: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -100,6 +102,26 @@ jobs:
       with:
         name: OpenWrt_bin
         path: openwrt/bin
+
+    - name: Upload bin directory to cowtransfer
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_COWTRANSFER == 'true' && !cancelled()
+      run: |
+        cd openwrt
+        tar -zcvf OpenWrt_bin_All.tar.gz bin
+        rm -rf bin/*
+        mv OpenWrt_bin_All.tar.gz bin/
+        cd bin
+        echo "::set-env name=FIRMWARE::$PWD"
+        curl -fsSL git.io/file-transfer | sh
+        ./transfer cow --block 2621440 -s -p 99 -t 3 --hash --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
+        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
+
+    - name: Upload bin directory to WeTransfer
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_WETRANSFER == 'true' && !cancelled()
+      run: |
+        curl -fsSL git.io/file-transfer | sh
+        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
+        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
 
     - name: Organize files
       id: organize
