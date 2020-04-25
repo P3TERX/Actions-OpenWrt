@@ -57,7 +57,8 @@ jobs:
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
         curl -fsSL https://raw.githubusercontent.com/GiriNeko/Actions-OpenWrt/master/.bashrc >> ~/.bashrc
-
+        source ~/.bashrc
+        
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
