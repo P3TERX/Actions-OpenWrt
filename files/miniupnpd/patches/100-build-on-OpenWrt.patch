@@ -1,0 +1,58 @@
+--- a/genconfig.sh
++++ b/genconfig.sh
+@@ -379,12 +379,19 @@ case $FW in
+ esac
+ 
+ # UUID API
+-if grep uuid_create /usr/include/uuid.h > /dev/null 2>&1 ; then
+-	echo "#define BSD_UUID" >> ${CONFIGFILE}
+-fi
+-if grep uuid_generate /usr/include/uuid/uuid.h > /dev/null 2>&1 ; then
+-	echo "#define LIB_UUID" >> ${CONFIGFILE}
+-fi
++case $OS_NAME in
++	OpenWRT)
++		echo "#define LIB_UUID" >> ${CONFIGFILE}
++		;;
++	*)
++		if grep uuid_create /usr/include/uuid.h > /dev/null 2>&1 ; then
++			echo "#define BSD_UUID" >> ${CONFIGFILE}
++		fi
++		if grep uuid_generate /usr/include/uuid/uuid.h > /dev/null 2>&1 ; then
++			echo "#define LIB_UUID" >> ${CONFIGFILE}
++		fi
++		;;
++esac
+ 
+ # set V6SOCKETS_ARE_V6ONLY to 0 if it was not set above
+ if [ -z "$V6SOCKETS_ARE_V6ONLY" ] ; then
+--- a/Makefile.linux
++++ b/Makefile.linux
+@@ -73,7 +73,10 @@ CPPFLAGS += -DIPTABLES_143
+ endif
+ 
+ CFLAGS  += $(shell $(PKG_CONFIG) --cflags libiptc)
++#OpenWrt packager passes correct libraries
++ifeq ($(TARGET_OPENWRT),)
+ LDLIBS  += $(shell $(PKG_CONFIG) --static --libs-only-l libiptc)
++endif
+ LDFLAGS += $(shell $(PKG_CONFIG) --libs-only-L libiptc)
+ LDFLAGS += $(shell $(PKG_CONFIG) --libs-only-other libiptc)
+ else
+@@ -153,6 +156,8 @@ LDLIBS += $(shell $(PKG_CONFIG) --static
+ LDLIBS += $(shell $(PKG_CONFIG) --static --libs-only-l libnetfilter_conntrack)
+ endif # ($(TEST),1)
+ 
++# OpenWrt packager disables https server for IGD v2 and hardcodes libuuid support
++ifeq ($(TARGET_OPENWRT),)
+ LDLIBS += $(shell $(PKG_CONFIG) --static --libs-only-l libssl)
+ 
+ TEST := $(shell $(PKG_CONFIG) --exists uuid && echo 1)
+@@ -161,6 +166,7 @@ LDLIBS += $(shell $(PKG_CONFIG) --static
+ else
+ $(info please install uuid-dev package / libuuid)
+ endif # ($(TEST),1)
++endif # ($(TARGET_OPENWRT,)
+ 
+ TESTUPNPDESCGENOBJS = testupnpdescgen.o upnpdescgen.o
+ 
