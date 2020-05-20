@@ -1,8 +1,8 @@
 #=================================================
-# https://github.com/P3TERX/Actions-OpenWrt
+# https://github.com/nofoghu/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
-# Author: P3TERX
+# Author: nofoghu
 # Blog: https://p3terx.com
 #=================================================
 
@@ -29,7 +29,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  SSH_ACTIONS: false
+  SSH_ACTIONS: ture
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
