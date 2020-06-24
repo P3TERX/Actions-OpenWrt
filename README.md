@@ -23,6 +23,7 @@ Add some meta info of your built firmware (such as firmware architecture and ins
 
 ## Acknowledgments
 
+- [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
 - [Microsoft](https://www.microsoft.com)
 - [Microsoft Azure](https://azure.microsoft.com)
 - [GitHub](https://github.com)
