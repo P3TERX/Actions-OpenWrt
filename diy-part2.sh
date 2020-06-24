@@ -11,4 +11,4 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile
-sed -i 'uci set system.@system[0].hostname=Atroc-x86' package/lean/default-settings/files
+sed -i '/uci set system.@system[0].zonename=Asia/Shanghai/i\uci set system.@system[0].hostname=Atroc-x86' package/lean/default-settings/files/zzz-default-settings
