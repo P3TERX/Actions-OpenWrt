@@ -133,7 +133,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_X86_Atroc_${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: OpenWrt_X86_Atroc${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
