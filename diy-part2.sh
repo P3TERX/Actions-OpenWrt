@@ -24,10 +24,10 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname=Atroc-x86' packa
 #git clone https://github.com/jerrykuku/luci-app-vssr package/diy-packages/helloworld/luci-app-vssr
 
 # 获取passwall
-git clone -b 3.6-40 https://github.com/liuran001/luci-app-passwall package/diy-packages/passwall
+#git clone -b 3.6-40 https://github.com/liuran001/luci-app-passwall package/diy-packages/passwall
 
 # 获取Lienol-package
-git clone https://github.com/Lienol/openwrt-package package/diy-packages/lienol
+#git clone https://github.com/Lienol/openwrt-package package/diy-packages/lienol
 
 # 获取luci-app-diskman和依赖
 #mkdir -p package/diy-packages/luci-app-diskman && \
