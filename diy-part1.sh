@@ -15,3 +15,12 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+#应用过滤插件
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+#KoolProxyR去广告插件
+git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
+#微信推送插件
+git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+#京东签到插件及其node-request依赖
+git clone https://github.com/jerrykuku/node-request  package/node-request 
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
