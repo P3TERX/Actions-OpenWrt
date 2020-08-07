@@ -15,8 +15,8 @@
 
 # 使用旧版的upnp
 # 删除现有的包
-rm -rf feeds/packages/net/miniupnpd
-rm -rf feeds/luci/applications/luci-app-upnp
+# rm -rf feeds/packages/net/miniupnpd
+# rm -rf feeds/luci/applications/luci-app-upnp
 # 使用自定义的包
-cp -rf files/miniupnpd feeds/packages/net/
-cp -rf files/luci-app-upnp feeds/luci/applications/
+# cp -rf files/miniupnpd feeds/packages/net/
+# cp -rf files/luci-app-upnp feeds/luci/applications/
