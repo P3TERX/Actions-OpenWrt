@@ -10,9 +10,9 @@
 
  Modify default IP
 sed -i 's/192.168.1.1/10.10.10.11/g' package/base-files/files/bin/config_generate
-git clone https://github.com/tzxiaozhen88/luci-app-koolproxyR.git ./package/luci-app-koolproxyR
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git ./package/luci-app-adguardhome
+# git clone https://github.com/tzxiaozhen88/luci-app-koolproxyR.git ./package/luci-app-koolproxyR
+# git clone https://github.com/rufengsuixing/luci-app-adguardhome.git ./package/luci-app-adguardhome
 # git clone https://github.com/pymumu/luci-app-smartdns.git ./package/luci-app-smartdns
 # git clone https://github.com/KFERMercer/luci-app-serverchan.git ./package/luci-app-serverchan
-git clone https://github.com/xiaorouji/openwrt-package.git ./package/luci-app-passwall
-git clone https://github.com/xiaorouji/openwrt-package.git ./package/luci-app-filebrowser
+# git clone https://github.com/xiaorouji/openwrt-package.git ./package/luci-app-passwall
+# git clone https://github.com/xiaorouji/openwrt-package.git ./package/luci-app-filebrowser
