@@ -1,0 +1,89 @@
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7621=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mir3p=y
+CONFIG_BUSYBOX_CUSTOM=y
+CONFIG_NODEJS_ICU_NONE=y
+# CONFIG_OPENLDAP_DEBUG is not set
+CONFIG_OPENSSL_WITH_COMPRESSION=y
+CONFIG_OPENSSL_WITH_DTLS=y
+CONFIG_OPENSSL_WITH_EC2M=y
+CONFIG_OPENSSL_WITH_NPN=y
+CONFIG_PACKAGE_AdGuardHome=y
+CONFIG_PACKAGE_UnblockNeteaseMusic=y
+CONFIG_PACKAGE_UnblockNeteaseMusicGo=y
+CONFIG_PACKAGE_boost=y
+CONFIG_PACKAGE_boost-date_time=y
+CONFIG_PACKAGE_boost-program_options=y
+CONFIG_PACKAGE_boost-system=y
+CONFIG_PACKAGE_ca-bundle=y
+# CONFIG_PACKAGE_coremark is not set
+CONFIG_PACKAGE_coreutils-nohup=y
+# CONFIG_PACKAGE_ddns-scripts is not set
+# CONFIG_PACKAGE_ddns-scripts_aliyun is not set
+# CONFIG_PACKAGE_ddns-scripts_dnspod is not set
+# CONFIG_PACKAGE_etherwake is not set
+CONFIG_PACKAGE_haproxy=y
+CONFIG_PACKAGE_ipt2socks=y
+CONFIG_PACKAGE_iputils-tracepath=y
+CONFIG_PACKAGE_iputils-traceroute6=y
+CONFIG_PACKAGE_kcptun-client=y
+# CONFIG_PACKAGE_kmod-nf-conntrack-netlink is not set
+CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+CONFIG_PACKAGE_kmod-usb2-pci=y
+CONFIG_PACKAGE_libatomic=y
+CONFIG_PACKAGE_libcares=y
+CONFIG_PACKAGE_libevent2=y
+CONFIG_PACKAGE_libhttp-parser=y
+CONFIG_PACKAGE_libltdl=y
+CONFIG_PACKAGE_libncurses=y
+CONFIG_PACKAGE_libnghttp2=y
+CONFIG_PACKAGE_libreadline=y
+CONFIG_PACKAGE_libstdcpp=y
+CONFIG_PACKAGE_libuv=y
+# CONFIG_PACKAGE_luci-app-accesscontrol is not set
+CONFIG_PACKAGE_luci-app-adguardhome=y
+# CONFIG_PACKAGE_luci-app-arpbind is not set
+# CONFIG_PACKAGE_luci-app-ddns is not set
+CONFIG_PACKAGE_luci-app-netdata=y
+# CONFIG_PACKAGE_luci-app-nlbwmon is not set
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_socks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
+# CONFIG_PACKAGE_luci-app-upnp is not set
+# CONFIG_PACKAGE_luci-app-vsftpd is not set
+# CONFIG_PACKAGE_luci-app-wol is not set
+CONFIG_PACKAGE_luci-i18n-netdata-zh-cn=y
+CONFIG_PACKAGE_luci-ssl-openssl=y
+# CONFIG_PACKAGE_miniupnpd is not set
+CONFIG_PACKAGE_netdata=y
+# CONFIG_PACKAGE_nlbwmon is not set
+CONFIG_PACKAGE_node=y
+CONFIG_PACKAGE_redsocks2=y
+CONFIG_PACKAGE_shadowsocksr-libev-server=y
+CONFIG_PACKAGE_terminfo=y
+CONFIG_PACKAGE_trojan=y
+CONFIG_PACKAGE_unzip=y
+CONFIG_PACKAGE_v2ray=y
+CONFIG_PACKAGE_v2ray-plugin=y
+# CONFIG_PACKAGE_vsftpd-alt is not set
+CONFIG_UnblockNeteaseMusic_Go=y
+CONFIG_UnblockNeteaseMusic_NodeJS=y
+CONFIG_V2RAY_COMPRESS_UPX=y
+CONFIG_V2RAY_DISABLE_NONE=y
+CONFIG_V2RAY_EXCLUDE_ASSETS=y
+CONFIG_V2RAY_EXCLUDE_V2CTL=y
+CONFIG_V2RAY_JSON_INTERNAL=y
+CONFIG_boost-compile-visibility-hidden=y
+CONFIG_boost-runtime-shared=y
+CONFIG_boost-static-and-shared-libs=y
+CONFIG_boost-variant-release=y
