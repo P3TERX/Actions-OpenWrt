@@ -31,6 +31,15 @@ git pull
 cd ..
 fi
 
+echo "luci-app-usb3disable"
+if [ ! -d "./luci-app-usb3disable" ];then
+git clone https://github.com/rufengsuixing/luci-app-usb3disable.git
+else
+cd luci-app-usb3disable
+git pull
+cd ..
+fi
+
 echo "luci-app-adguardhome"
 if [ ! -d "./luci-app-adguardhome" ];then
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
