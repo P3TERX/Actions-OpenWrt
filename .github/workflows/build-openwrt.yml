@@ -152,11 +152,3 @@ jobs:
         curl -fsSL git.io/file-transfer | sh
         ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
-    - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v1-release
-      with:
-        repo_token: ${{ secrets.R_TOKEN }}
-        file: ${FIRMWARE}
-        tag: AtuoBuild
-        overwrite: true
-        file_glob: true
