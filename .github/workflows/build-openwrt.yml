@@ -22,10 +22,10 @@ on:
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
-#    types: started
+    types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/Lienol/openwrt op19
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
