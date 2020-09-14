@@ -15,7 +15,7 @@ on:
 
 env:
   REPO_URL: https://github.com/a520ass/openwrt
-  REPO_BRANCH: v19.07.3
+  REPO_BRANCH: v19.07.4
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ath79.config
   DIY_P1_SH: diy-part1.sh
