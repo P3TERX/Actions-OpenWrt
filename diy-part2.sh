@@ -19,3 +19,6 @@ device_name='Xiaomi_MIne'
 wifi_name=$device_name
 #echo "修改wifi名称"
 #sed -i "s/OpenWrt/$wifi_name/g" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+# Modify default theme
+#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
