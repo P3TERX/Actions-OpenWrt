@@ -16,6 +16,7 @@
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #!/bin/bash
+git clone https://github.com/filebrowser/filebrowser.git package/filebrowser
 
 if [ ! -d "./package/myapp" ];then
 mkdir ./package/myapp
