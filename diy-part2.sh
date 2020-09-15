@@ -10,5 +10,12 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# Modify default IP
+# 修改LAN IP
 #sed -i 's/192.168.1.1/10.10.10.10/g' package/base-files/files/bin/config_generate
+device_name='Xiaomi_MIne'
+#echo "修改机器名称"
+#sed -i "s/OpenWrt/$device_name/g" ./package/base-files/files/bin/config_generate
+
+wifi_name=$device_name
+#echo "修改wifi名称"
+#sed -i "s/OpenWrt/$wifi_name/g" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
