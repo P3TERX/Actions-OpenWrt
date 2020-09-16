@@ -23,6 +23,8 @@ wifi_name=$device_name
 samba4 开放root用户
 sed -i "s/invalid users = root/#invalid users = root/g" ./package/lean/samba4/files/smb.conf.template
 
+sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' ./package/lean/default-settings/files/zzz-default-settings
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
