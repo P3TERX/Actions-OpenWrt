@@ -18,3 +18,5 @@
 #!/bin/bash
 
 git clone https://github.com/filebrowser/filebrowser.git package/filebrowser
+
+git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
