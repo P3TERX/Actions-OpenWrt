@@ -20,10 +20,10 @@ wifi_name=$device_name
 #echo "修改wifi名称"
 #sed -i "s/OpenWrt/$wifi_name/g" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-samba4 开放root用户
+#samba4 开放root用户
 #sed -i "s/invalid/#invalid/g" ./package/lean/samba4/files/smb.conf.template
 
-sed -i 's/openwrt.proxy.ustclug.org/mirrors.cloud.tencent.com/lede/g' ./package/lean/default-settings/files/zzz-default-settings
+sed -i "s/openwrt.proxy.ustclug.org/mirrors.cloud.tencent.com/lede/g" ./package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
