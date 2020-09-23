@@ -22,3 +22,5 @@ git clone https://github.com/filebrowser/filebrowser.git package/filebrowser
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 #可道云
 git clone https://github.com/garypang13/luci-app-php-kodexplorer package/luci-app-php-kodexplorer
+#SmartDNS
+git clone https://github.com/garypang13/openwrt-smartdns package
