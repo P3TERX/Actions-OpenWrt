@@ -11,4 +11,11 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+#============================================================
+git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
+# git clone https://github.com/project-openwrt/luci-app-koolproxyR.git package/koolproxyR
+#============================================================
+# 删除固件默认登录密码
+#sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+#============================================================
