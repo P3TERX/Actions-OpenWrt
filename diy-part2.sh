@@ -21,4 +21,4 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 #============================================================
 # 删除固件默认登录密码
 #sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
-#============================================================
+#=============================================================
