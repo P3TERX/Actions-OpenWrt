@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name:  K2P SSR+Plus(5.4内核)
+name:  K2P PassWall(5.4内核)
 
 on:
   repository_dispatch:
@@ -24,8 +24,8 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
@@ -72,6 +72,9 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+
+    - name: Clean feeds
+      run: cd openwrt && ./scripts/feeds clean
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
