@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name:  极路由2 PassWall
+name:  极路由2 PassWall Naive
 
 on:
   repository_dispatch:
