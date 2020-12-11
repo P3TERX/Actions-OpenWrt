@@ -13,7 +13,7 @@ on:
     types: published
   push:
     branches:
-      - master
+      - main
     paths:
       - '.config'
 #  schedule:
@@ -39,7 +39,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@main
 
     - name: Initialization environment
       env:
@@ -51,7 +51,7 @@ jobs:
         sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
-        curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
+        curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/main/.bashrc >> ~/.bashrc
 
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
@@ -71,7 +71,7 @@ jobs:
         ../$DIY_SH
 
     - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
+      uses: P3TERX/debugger-action@main
       if: env.SSH_ACTIONS == 'true'
 
     - name: Download package
@@ -92,7 +92,7 @@ jobs:
         echo "::set-output name=status::success"
 
     - name: Upload bin directory
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
         name: OpenWrt_bin
@@ -108,7 +108,7 @@ jobs:
         echo "::set-output name=status::success"
 
     - name: Upload firmware directory
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware
