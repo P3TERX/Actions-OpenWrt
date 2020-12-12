@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name:  极路由2 PassWall Naive
+name:  极路由2 PassWall
 
 on:
   repository_dispatch:
@@ -24,10 +24,10 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: 19.07
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: N.config
+  CONFIG_FILE: p5.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
 
