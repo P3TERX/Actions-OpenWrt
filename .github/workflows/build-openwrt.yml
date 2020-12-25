@@ -1,38 +1,38 @@
-#
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
+#=================================================
 # https://github.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
-#
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
 
 name: Build OpenWrt
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+  watch:
+  push:
+    types: [started]
+  release:
+    types: [published]
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
+#  watch:
+#    types: [started]
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
+  REPO_URL: https://https://github.com/Lienol/openwrt
+  REPO_BRANCH: dev-19.07
   CONFIG_FILE: .config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_SH: diy.sh
+  FREE_UP_DISK: false
+  SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
-  UPLOAD_WETRANSFER: false
-  UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
 
 jobs:
