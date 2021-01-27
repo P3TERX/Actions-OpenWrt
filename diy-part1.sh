@@ -16,7 +16,7 @@
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 # git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
-git clone https://github.com/281677160/openwrt-package package/danshui
+# git clone https://github.com/281677160/openwrt-package package/danshui
 #============================================================
 # git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/kongfl888/luci-app-adguardhome.git package/adguardhome
