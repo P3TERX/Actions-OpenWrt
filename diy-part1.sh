@@ -18,9 +18,10 @@
 # git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 # git clone https://github.com/281677160/openwrt-package package/danshui
 #============================================================
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns package/luci-app-smartdns
 # git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-# git clone https://github.com/kongfl888/luci-app-adguardhome.git package/adguardhome
-# git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/adguardhome
+git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 # git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/jerrykuku-jd-dailybonus
 # git clone https://github.com/jefferymvp/luci-app-koolproxyR.git package/koolproxyR
 # git clone https://github.com/project-openwrt/luci-app-koolproxyR.git package/koolproxyR
