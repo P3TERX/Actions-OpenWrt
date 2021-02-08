@@ -46,8 +46,8 @@ jobs:
       uses: actions/checkout@master
 
     - name: Initialization environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
+#       env:
+#         DEBIAN_FRONTEND: noninteractive
       run: |
         #sudo swapoff /swapfile
         sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
