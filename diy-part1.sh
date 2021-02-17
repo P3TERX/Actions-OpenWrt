@@ -19,9 +19,9 @@
 # git clone https://github.com/281677160/openwrt-package package/danshui
 #========================================================================================================
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns package/luci-app-smartdns
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/adguardhome
 git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 
+# git clone https://github.com/kongfl888/luci-app-adguardhome.git package/adguardhome
 # git clone https://github.com/project-lede/luci-app-godproxy.git package/godproxy
 # git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/jerrykuku-jd-dailybonus
