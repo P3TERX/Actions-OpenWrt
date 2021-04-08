@@ -11,13 +11,15 @@
 name: PSG1218-Build OpenWrt
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+  watch:
+    types: started
+#  repository_dispatch:
+#  workflow_dispatch:
+#    inputs:
+#      ssh:
+#        description: 'SSH connection to Actions'
+#        required: false
+#        default: 'false'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -36,7 +38,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-18.04
-
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
     - name: Checkout
       uses: actions/checkout@main
