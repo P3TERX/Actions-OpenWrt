@@ -22,3 +22,6 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
 #设置16m闪存
 sed -i 's/<0x50000 0x7b0000>/<0x50000 0xfb0000>/g' target/linux/ramips/dts/*psg1218*
+
+#默认主题改为agon
+sed -i 's/luci-theme-bootstrap/luci-theme-agon/g' ./feeds/luci/collections/luci/Makefile
