@@ -25,3 +25,22 @@ sed -i 's/<0x50000 0x7b0000>/<0x50000 0xfb0000>/g' target/linux/ramips/dts/*psg1
 
 #默认主题改为agon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
+
+# Web sysupgrade Fix
+sed -i '/^.*hc5962.*/d' target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
+cp -f $GITHUB_WORKSPACE/mt7621_hiwifi_hc5962-spi.dts ./target/linux/ramips/dts/
+# 网络接口适配
+sed -i ':a;N;$!ba;s/hiwifi,hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+sed -i ':a;N;$!ba;s/d-team,newifi-d2/&|\\\n\thiwifi,hc5962-spi/2' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+
+cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
+define Device/hiwifi_hc5962-spi
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := HiWiFi
+  DEVICE_MODEL := HC5962-SPI
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
+endef
+TARGET_DEVICES += hiwifi_hc5962-spi
+EOF
+sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
