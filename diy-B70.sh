@@ -28,7 +28,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 
 # Web sysupgrade Fix
 sed -i '/^.*hc5962.*/d' target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
-cp -f $GITHUB_WORKSPACE/mt7621_hiwifi_hc5962-spi.dts ./target/linux/ramips/dts/
+cp -f $GITHUB_WORKSPACE/hc5962.dts ./target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
 # 网络接口适配
 sed -i ':a;N;$!ba;s/hiwifi,hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 sed -i ':a;N;$!ba;s/d-team,newifi-d2/&|\\\n\thiwifi,hc5962-spi/2' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
