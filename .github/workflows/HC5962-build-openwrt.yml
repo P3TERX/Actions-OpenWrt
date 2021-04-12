@@ -11,8 +11,8 @@
 name: HC5962-Build OpenWrt
 
 on:
-#  watch:
-#    types: started
+  watch:
+    types: started
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -22,8 +22,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/coolsnowwolf/openwrt
+  REPO_BRANCH: lede-17.01
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: hc5962.config
   DIY_P1_SH: diy-feed.sh
