@@ -1,3 +1,4 @@
+  
 /dts-v1/;
 
 #include "mt7620a.dtsi"
@@ -6,7 +7,7 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	compatible = "phicomm,psg1218a",  "ralink,mt7620a-soc";
+	compatible = "phicomm,psg1218a", "ralink,mt7620a-soc";
 	model = "Phicomm PSG1218 rev.A";
 
 	aliases {
@@ -14,10 +15,6 @@
 		led-failsafe = &led_blue;
 		led-running = &led_blue;
 		led-upgrade = &led_blue;
-	};
-
-	chosen {
-		bootargs = "console=ttyS0,115200";
 	};
 
 	keys {
@@ -29,7 +26,6 @@
 			linux,code = <KEY_RESTART>;
 		};
 	};
-
 	leds {
 		compatible = "gpio-leds";
 
@@ -58,12 +54,13 @@
 &spi0 {
 	status = "okay";
 
-	m25p80@0 {
+	flash@0 {
 		compatible = "jedec,spi-nor";
 		reg = <0>;
-		spi-max-frequency = <10000000>;
+		spi-max-frequency = <50000000>;
+		m25p,fast-read;
 
-		partitions {
+		partitions: partitions {
 			compatible = "fixed-partitions";
 			#address-cells = <1>;
 			#size-cells = <1>;
@@ -95,25 +92,11 @@
 	};
 };
 
-&ehci {
-	status = "okay";
-};
-
-&ohci {
-	status = "okay";
-};
-
-&ethernet {
-	pinctrl-names = "default";
-	pinctrl-0 = <&ephy_pins>;
-	mtd-mac-address = <&factory 0x28>;
-	mediatek,portmap = "llllw";
-};
-
-&wmac {
-	ralink,mtd-eeprom = <&factory 0>;
-	pinctrl-names = "default";
-	pinctrl-0 = <&pa_pins>;
+&state_default {
+	gpio {
+		groups = "i2c", "uartf", "rgmii1", "rgmii2", "wled", "nd_sd";
+		function = "gpio";
+	};
 };
 
 &pcie {
@@ -128,9 +111,16 @@
 	};
 };
 
-&state_default {
-	gpio {
-		ralink,group = "i2c", "uartf", "rgmii1", "rgmii2", "wled", "nd_sd";
-		ralink,function = "gpio";
-	};
+&ethernet {
+	pinctrl-names = "default";
+	pinctrl-0 = <&ephy_pins>;
+
+	mtd-mac-address = <&factory 0x28>;
+
+	mediatek,portmap = "llllw";
+};
+&wmac {
+	ralink,mtd-eeprom = <&factory 0x0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pa_pins>;
 };
