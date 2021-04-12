@@ -24,7 +24,7 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 sed -i 's/0x7b0000/0xfb0000/g' target/linux/ramips/dts/mt7620a_phicomm_psg1218.dtsi
 
 #切换4.14内核
-sed -i 's/5.4/4.14/g' target/linux/ramips/Makefile
+#sed -i 's/5.4/4.14/g' target/linux/ramips/Makefile
 
 # 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
