@@ -22,8 +22,8 @@ on:
 #        default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/coolsnowwolf/openwrt
+  REPO_BRANCH: lede-17.01
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: PSG1218.config
   DIY_P1_SH: diy-feed.sh
