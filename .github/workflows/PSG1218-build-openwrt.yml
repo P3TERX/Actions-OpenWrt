@@ -76,6 +76,7 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
+        [ -e K2-psg1218a.dts ] && mv -f K2-psg1218a.dts ./target/linux/ramips/dts/mt7620a_phicomm_psg1218a.dts
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
