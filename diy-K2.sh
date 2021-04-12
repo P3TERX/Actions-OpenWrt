@@ -22,6 +22,7 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
 #设置16m闪存
 sed -i 's/0x7b0000/0xfb0000/g' target/linux/ramips/dts/mt7620a_phicomm_psg1218.dtsi
+sed -i 's/7872k/16064k/g' target/linux/ramips/image/mt7620.mk
 
 #切换4.14内核
 #sed -i 's/5.4/4.14/g' target/linux/ramips/Makefile
