@@ -28,7 +28,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 
 # Web sysupgrade Fix
 sed -i '/^.*hc5962.*/d' target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
-cp -f $GITHUB_WORKSPACE/hc5962.dts ./target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
+
 # 适配4.14内核
 sed -i 's/<&gpio /<\&gpio0 /g' ./target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
 # 网络接口适配
