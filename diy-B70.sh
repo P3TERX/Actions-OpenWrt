@@ -20,8 +20,9 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_ACPI=y\nCONFIG_X86_ACPI_CPUFREQ=y\n \
 CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
-#设置16m闪存
-#sed -i 's/<0x50000 0x7b0000>/<0x50000 0xfb0000>/g' target/linux/ramips/dts/*hc5962*
+#设置32m闪存
+#sed -i 's/0xfb0000/0x1fb0000/g' target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
+#sed -i 's/16064k/32448k/g' target/linux/ramips/image/mt7621.mk
 
 #默认主题改为argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
