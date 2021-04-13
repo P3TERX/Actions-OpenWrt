@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/openwrt
   REPO_BRANCH: lede-17.01
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: PSG1218.config
+  CONFIG_FILE: PSG1218-8m.config
   DIY_P1_SH: diy-feed.sh
   DIY_P2_SH: diy-K2.sh
   UPLOAD_BIN_DIR: true
