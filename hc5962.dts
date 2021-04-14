@@ -36,8 +36,7 @@
 	};
 
 	keys {
-		compatible = "gpio-keys-polled";
-		poll-interval = <20>;
+		compatible = "gpio-keys";
 
 		reset {
 			label = "reset";
@@ -112,10 +111,6 @@
 	};
 };
 
-&ethernet {
-	mtd-mac-address = <&factory 0xe000>;
-};
-
 &switch0 {
 	ports {
 		port@1 {
@@ -136,9 +131,12 @@
 		port@4 {
 			status = "okay";
 			label = "wan";
-			mtd-mac-address = <&factory 0xe006>;
 		};
 	};
+};
+
+&ethernet {
+	mtd-mac-address = <&factory 0xe000>;
 };
 
 &state_default {
