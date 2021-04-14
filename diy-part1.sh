@@ -18,10 +18,11 @@
 #    - name: Import external feeds
 #      working-directory: ./openwrt
 #      run: |
-#        git clone https://github.com/xiaorouji/openwrt-passwall.git package/xiaorouji
-#        git clone https://github.com/freifunk/openwrt-packages.git package/freifunk
-#        git clone https://github.com/kenzok8/small.git package/kenzok
-#        git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok
-#        git clone https://github.com/fw876/helloworld package/helloworld
+#        git clone https://github.com/xiaorouji/openwrt-passwall.git
+#        git clone https://github.com/freifunk/openwrt-packages.git
+#        git clone https://github.com/kenzok8/openwrt-packages.git
+#        git clone https://github.com/kenzok8/small.git
+#        git clone https://github.com/fw876/helloworld
+#        git clone https://github.com/destan19/OpenAppFilter.git
 #        ./scripts/feeds update freifunk
 #        ./scripts/feeds install -a -p freifunk
