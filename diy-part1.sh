@@ -21,6 +21,6 @@ git clone https://github.com/kenzok8/openwrt-packages.git
 git clone https://github.com/kenzok8/small.git
 git clone https://github.com/fw876/helloworld.git
 git clone https://github.com/destan19/OpenAppFilter.git
-#git clone https://github.com/freifunk/openwrt-packages.git freifunk/
+git clone https://github.com/freifunk/openwrt-packages.git freifunk
 #./scripts/feeds update freifunk
 #./scripts/feeds install -a -p freifunk
