@@ -27,7 +27,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: youku-yk1-32m.config
   DIY_P1_SH: diy-feed.sh
-  DIY_P2_SH: diy-yk1.sh
+  DIY_P2_SH: diy-Yk1.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
