@@ -8,6 +8,12 @@ Build OpenWrt using GitHub Actions
 
 [Read the details in my blog (in Chinese) | 中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
+## Bypass分支说明
+
+恩山论坛[@小鸡过河](https://www.right.com.cn/forum/space-uid-370176.html)的固件比较有特色, 尤其是科学上网插件Bypass(~~不是买火车票那个分流抢票~~), 但是他用的是lede 5.4内核分支, 稳定性不及4.14内核, 对硬件性能要求比较高
+
+本分支使用[lede-17.01稳定分支](https://github.com/coolsnowwolf/openwrt), feed添加了[garypang13/openwrt-packages](https://github.com/garypang13/openwrt-packages), 编译出来的使用Bypass的4.14内核, 试用了几天, 表现尚可。
+
 ## Usage
 
 - Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
