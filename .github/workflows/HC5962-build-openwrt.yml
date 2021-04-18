@@ -79,7 +79,7 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e hc5962.dts ] && mv -f hc5962.dts openwrt/target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
+        [ -e hc5962.dts ] && mv -f hc5962.dts openwrt/target/linux/ramips/dts/HC5962-SPI.dts
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
