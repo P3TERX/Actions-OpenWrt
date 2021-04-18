@@ -28,4 +28,3 @@ sed -i -r "s/(dns_caching )'0'/\1'1'/1" package/feeds/custom/luci-app-turboacc/r
 
 # custom插件汉化
 mv package/feeds/custom/luci-app-turboacc/po/zh_Hans package/feeds/custom/luci-app-turboacc/po/zh-cn
-mv package/feeds/custom/luci-app-bypass/po/zh_Hans package/feeds/custom/luci-app-bypass/po/zh-cn
