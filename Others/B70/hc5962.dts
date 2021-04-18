@@ -14,7 +14,11 @@
 		led-failsafe = &led_system;
 		led-running = &led_status;
 		led-upgrade = &led_status;
-		label-mac-device = &ethernet;
+	};
+	
+	memory@0 {
+		device_type = "memory";
+		reg = <0x0 0x10000000>;
 	};
 
 	chosen {
@@ -37,7 +41,8 @@
 	};
 
 	keys {
-		compatible = "gpio-keys";
+		compatible = "gpio-keys-polled";
+		poll-interval = <20>;
 
 		reset {
 			label = "reset";
@@ -57,7 +62,7 @@
 	flash@0 {
 		compatible = "jedec,spi-nor";
 		reg = <0>;
-		spi-max-frequency = <10000000>;
+		spi-max-frequency = <25000000>;
 
 		partitions {
 			compatible = "fixed-partitions";
@@ -115,9 +120,11 @@
 	mtd-mac-address = <&factory 0xe000>;
 };
 
-&state_default {
-	gpio {
-		ralink,group = "uart3", "jtag";
-		ralink,function = "gpio";
+&pinctrl {
+	state_default: pinctrl0 {
+		gpio {
+			ralink,group = "uart3", "jtag";
+			ralink,function = "gpio";
+		};
 	};
 };
