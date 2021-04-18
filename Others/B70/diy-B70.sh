@@ -25,7 +25,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 
 # 网络接口适配
 sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-sed -i ':a;N;$!ba;s/xiaomi,mir3g/hiwifi,hc5962-spi|\\\n\t&/2' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/hiwifi_hc5962-spi
