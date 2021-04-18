@@ -22,8 +22,8 @@ on:
 #        default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/openwrt
-  REPO_BRANCH: lede-17.01
+  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Others/Youku-Yk1/youku-yk1-32m.config
   DIY_P1_SH: diy-feed.sh
