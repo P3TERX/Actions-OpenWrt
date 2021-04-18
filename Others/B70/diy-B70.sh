@@ -14,7 +14,7 @@
 sed -i 's/192.168.1.1/192.168.77.1/g' package/base-files/files/bin/config_generate
 
 #删除默认密码
-sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/default-settings/files/zzz-default-settings
 
 #设置FAT为utf8编码
 find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_ACPI=y\nCONFIG_X86_ACPI_CPUFREQ=y\n \
@@ -23,21 +23,16 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 #默认主题改为argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
 
-# Web sysupgrade Fix
-#sed -i '/^.*hc5962.*/d' target/linux/ramips/mt7621/base-files/lib/upgrade/platform.sh
-# 适配4.14内核
-#sed -i 's/<&gpio /<\&gpio0 /g' ./target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
-
 # 网络接口适配
-sed -i ':a;N;$!ba;s/hiwifi,hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-sed -i ':a;N;$!ba;s/d-team,newifi-d2/&|\\\n\thiwifi,hc5962-spi/2' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+sed -i ':a;N;$!ba;s/xiaomi,mir3g/hiwifi,hc5962-spi|\\\n\t&/2' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/hiwifi_hc5962-spi
-  $(Device/uimage-lzma-loader)
-  IMAGE_SIZE := 16064k
+  DTS := HC5962-SPI
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_VENDOR := HiWiFi
-  DEVICE_MODEL := HC5962-SPI
+  DEVICE_TITLE := HC5962-SPI
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
 endef
 TARGET_DEVICES += hiwifi_hc5962-spi
