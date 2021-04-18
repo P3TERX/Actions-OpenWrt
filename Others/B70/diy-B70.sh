@@ -27,17 +27,17 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/mt7621/base-files/etc/board.d/02_network
 
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
-define Device/hiwifi_hc5962-spi
+define Device/hc5962-spi
   DTS := HC5962-SPI
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_VENDOR := HiWiFi
   DEVICE_TITLE := HC5962-SPI
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
 endef
-TARGET_DEVICES += hiwifi_hc5962-spi
+TARGET_DEVICES += hc5962-spi
 EOF
 sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 #设置32m闪存
-#sed -i 's/0xfb0000/0x1fb0000/g' target/linux/ramips/dts/mt7621_hiwifi_hc5962-spi.dts
-#sed -i 's/16064k/32448k/g' target/linux/ramips/image/mt7621.mk
+#sed -i 's/0xfb0000/0x1fb0000/g' target/linux/ramips/dts/HC5962-SPI.dts
+#sed -i 's/fw_size_16M/fw_size_32M/g' target/linux/ramips/image/mt7621.mk
