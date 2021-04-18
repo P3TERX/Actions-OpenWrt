@@ -22,8 +22,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/openwrt
-  REPO_BRANCH: lede-17.01
+  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Others/B70/hc5962.config
   DIY_P1_SH: diy-feed.sh
@@ -84,6 +84,8 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
+        find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
