@@ -21,8 +21,8 @@ find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_A
 CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
 #设置16m闪存
-sed -i 's/0x7b0000/0xfb0000/g' target/linux/ramips/dts/mt7620a_phicomm_psg1218.dtsi
-sed -i 's/7872k/16064k/g' target/linux/ramips/image/mt7620.mk
+sed -i 's/0x7b0000/0xfb0000/g' target/linux/ramips/dts/PSG1218.dtsi
+sed -i 's/DTS := PSG1218A/&\n\tIMAGE_SIZE := $(ralink_default_fw_size_16M)/g' target/linux/ramips/image/mt7620.mk
 
 # 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
