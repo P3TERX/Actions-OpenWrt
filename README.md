@@ -19,6 +19,7 @@ Build OpenWrt using GitHub Actions
 #### 常用广告屏蔽
 
 [乘风](https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt)**@**[卡饭](https://bbs.kafan.cn/thread-1866845-1-1.html)
+
 [anti-AD](https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt)**@**[Github](https://github.com/privacy-protection-tools/anti-AD)
 
 ## Usage
