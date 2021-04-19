@@ -8,6 +8,12 @@ Build OpenWrt using GitHub Actions
 
 [Read the details in my blog (in Chinese) | 中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
+## 分支说明
+
+- [main](https://github.com/lon91ong/Actions-OpenWrt/tree/main), 源于upstream的配置, 改用lede-17.01源
+- [bypass](https://github.com/lon91ong/Actions-OpenWrt/tree/bypass), 在main的基础上引入[garypang13/openwrt-packages](https://github.com/garypang13/openwrt-packages)源, 其中的Bypass插件确实好用
+- [lienol](https://github.com/lon91ong/Actions-OpenWrt/tree/lienol-19.07), [Lienol-19.07源](https://github.com/Lienol/openwrt)+[garypang13/openwrt-packages](https://github.com/garypang13/openwrt-packages)的Bypass
+
 ## Lienol分支说明
 
 恩山论坛[@小鸡过河](https://www.right.com.cn/forum/space-uid-370176.html)的固件比较有特色, 尤其是科学上网插件Bypass(~~不是买火车票那个分流抢票~~), 但是他用的是lede 5.4内核分支, 稳定性不及4.14内核, 对硬件性能要求比较高, 7621基本算是最低要求了...
