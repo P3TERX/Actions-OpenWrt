@@ -71,7 +71,9 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+      run: |
+        rm -rf package/feeds/custom/luci-theme*
+        cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
