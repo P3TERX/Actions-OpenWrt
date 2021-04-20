@@ -24,7 +24,7 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 sed -i 's/0x7b0000/0xfb0000/g' target/linux/ramips/dts/PSG1218.dtsi
 sed -i 's/DTS := PSG1218A/&\n\tIMAGE_SIZE := $(ralink_default_fw_size_16M)/g' target/linux/ramips/image/mt7620.mk
 
-# 修改默认主题, argon与lienol源适配有问题
+# 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
 
 # 默认turboacc开启DNS Caching功能
