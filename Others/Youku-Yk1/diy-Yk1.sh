@@ -20,7 +20,7 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/default-settings/files/zzz-default-set
 find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_ACPI=y\nCONFIG_X86_ACPI_CPUFREQ=y\n \
 CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
-# 修改默认主题, argon主题与lienol源适配有问题
+# 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 默认turboacc开启DNS Caching功能
