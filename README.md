@@ -14,9 +14,9 @@ Build OpenWrt using GitHub Actions
 - [bypass](https://github.com/lon91ong/Actions-OpenWrt/tree/bypass), 在main的基础上引入[garypang13/openwrt-packages](https://github.com/garypang13/openwrt-packages)源, 其中的Bypass插件确实好用
 - [lienol](https://github.com/lon91ong/Actions-OpenWrt/tree/lienol-19.07), [Lienol-19.07源](https://github.com/Lienol/openwrt)+[garypang13/openwrt-packages](https://github.com/garypang13/openwrt-packages)的Bypass
 
-## Lienol分支说明
+## Lienol分支说明(暂时放弃)
 
-暂时放弃这个分支了, Lienol与lede的配置差别还是蛮大的, 用Youku-Yk1测试了几次, 固件其它功能都还好, 就是主题页侧边栏加载总出错, 虽说可以在SSH安装[**yuyangyu755@恩山**](https://www.right.com.cn/forum/thread-4050369-1-1.html)编译的主题包解决, 但是总没有原生编译的舒服。发了[issue](https://github.com/Lienol/openwrt/issues/574)迟迟没有回复, 不折腾了。
+> 暂时放弃这个分支了, Lienol与lede的配置差别还是蛮大的, 用Youku-Yk1测试了几次, 固件其它功能都还好, 就是主题页侧边栏加载总出错, 虽说可以在SSH安装[**yuyangyu755@恩山**](https://www.right.com.cn/forum/thread-4050369-1-1.html)编译的主题包解决, 但是总没有原生编译的舒服。发了[issue](https://github.com/Lienol/openwrt/issues/574)迟迟没有回复, 不折腾了。
 
 恩山论坛[@小鸡过河](https://www.right.com.cn/forum/space-uid-370176.html)的固件比较有特色, 尤其是科学上网插件Bypass(~~不是买火车票那个分流抢票~~), 但是他用的是lede 5.4内核分支, 稳定性不及4.14内核, 对硬件性能要求比较高, 7621基本算是最低要求了...
 
