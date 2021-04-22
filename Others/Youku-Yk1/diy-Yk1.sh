@@ -21,7 +21,7 @@ find target/linux -path "target/linux/*/config-*" | xargs -i sed -i '$a CONFIG_A
 CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
 # 修改默认主题
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon-light-mod/g' feeds/luci/collections/luci/Makefile
 
 # 默认turboacc开启DNS Caching功能
 sed -i -r "s/(dns_caching )'0'/\1'1'/1" package/feeds/custom/luci-app-turboacc/root/etc/config/turboacc
