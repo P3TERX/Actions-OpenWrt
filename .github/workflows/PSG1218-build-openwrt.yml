@@ -11,9 +11,9 @@
 name: PSG1218-Build OpenWrt
 
 on:
-  watch:
-    types: started
-#  repository_dispatch:
+#  watch:
+#    types: started
+  repository_dispatch:
 #  workflow_dispatch:
 #    inputs:
 #      ssh:
