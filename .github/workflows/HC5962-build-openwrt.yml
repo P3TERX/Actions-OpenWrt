@@ -11,15 +11,15 @@
 name: HC5962-Build OpenWrt
 
 on:
-#  watch:
-#    types: started
+  watch:
+    types: started
   repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+#  workflow_dispatch:
+#    inputs:
+#      ssh:
+#        description: 'SSH connection to Actions'
+#        required: false
+#        default: 'false'
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
