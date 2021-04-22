@@ -34,10 +34,6 @@ Build OpenWrt using GitHub Actions
 
 [anti-AD](https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt)**@**[Github](https://github.com/privacy-protection-tools/anti-AD)
 
-### 笔记
-
-lienol源不适配argon主题
-
 ## Usage
 
 - Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
