@@ -30,7 +30,7 @@ Build OpenWrt using GitHub Actions
 
 #### 笔记
 
-固件开机DHCP服务不起效, 原因是5.4内核和4.14内核的resolv.conf(上游DNS配置文件)路径发生了变化, [参见lede#5158](https://github.com/coolsnowwolf/lede/issues/5158)
+固件开机DHCP服务不起效, 原因是5.4内核和4.14内核的resolv.conf(上游DNS配置文件)路径发生了变化, 参见[lede#5158](https://github.com/coolsnowwolf/lede/issues/5158).
 
 #### 常用广告屏蔽
 
