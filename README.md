@@ -28,6 +28,10 @@ Build OpenWrt using GitHub Actions
 
 其它做过的适配改动 [garypang13#10](https://github.com/garypang13/openwrt-packages/issues/10)
 
+#### 笔记
+
+固件开机DHCP服务不起效, 原因是5.4内核和4.14内核的resolv.conf(上游DNS配置文件)路径发生了变化, [参见lede#5158]https://github.com/coolsnowwolf/lede/issues/5158
+
 #### 常用广告屏蔽
 
 [乘风](https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt)**@**[卡饭](https://bbs.kafan.cn/thread-1866845-1-1.html)
