@@ -23,8 +23,7 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 # 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 rm -rf feeds/custom/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
-sed -i -r 's/(PKG_VERSION:).*/\1=1.7.2/1' feeds/custom/luci-theme-argon/Makefile
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
 
 # 默认turboacc开启DNS Caching功能
 #sed -i -r "s/(dns_caching )'0'/\1'1'/1" package/feeds/custom/luci-app-turboacc/root/etc/config/turboacc
