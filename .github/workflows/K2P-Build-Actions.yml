@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Yk1-Build OpenWrt
+name: K2P-Build OpenWrt
 
 on:
   watch:
