@@ -21,7 +21,8 @@ Build OpenWrt using GitHub Actions
 [搜索同样的主题问题](https://github.com/Lienol/openwrt/search?q=template.lua&type=issues), 看lienol的回复, 似乎是lienol使用的luci版本比较新, 与现有的主题适配有问题!
 
 **经验总结:** ~~看[`feeds.conf.default`](https://github.com/Lienol/openwrt/blob/19.07/feeds.conf.default)文件中`luci`源中**对应分支**下的`themes`文件夹下有啥装啥, 不能乱装!~~
-主题argon适配方法:
+
+**主题argon适配方法:**
 ```
 # 添加插件源, 含bypass, tubroacc等
 sed -i '$a src-git custom https://github.com/garypang13/openwrt-packages' feeds.conf.default
