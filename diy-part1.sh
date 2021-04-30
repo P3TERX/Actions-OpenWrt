@@ -18,8 +18,8 @@
 # git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 # git clone https://github.com/281677160/openwrt-package package/danshui
 #========================================================================================================
-git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
-git clone https://github.com/project-lede/luci-app-godproxy.git package/godproxy
+# git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
+# git clone https://github.com/project-lede/luci-app-godproxy.git package/godproxy
 
 # git clone https://github.com/riverscn/openwrt-iptvhelper.git package/iptvhelper
 # git clone https://github.com/NateLol/luci-app-beardropper.git package/beardropper
