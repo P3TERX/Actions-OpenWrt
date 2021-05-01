@@ -31,7 +31,7 @@ sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/g' ./target/linux/ramips/base-files/etc
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/hc5962-spi
   DTS := HC5962-SPI
-  IMAGE_SIZE := 33161216
+  IMAGE_SIZE := 16121856
   IMAGES += factory.bin
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
@@ -45,7 +45,7 @@ EOF
 sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 #设置32m闪存
-sed -i 's/0xfb0000/0x1fa0000/g' target/linux/ramips/dts/HC5962-SPI.dts
+#sed -i 's/0xfb0000/0x1fa0000/g' target/linux/ramips/dts/HC5962-SPI.dts
 #sed -i 's/fw_size_16M/fw_size_32M/g' target/linux/ramips/image/mt7621.mk
 
 # 默认turboacc开启DNS Caching功能
