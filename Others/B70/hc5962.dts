@@ -62,7 +62,8 @@
 	flash@0 {
 		compatible = "jedec,spi-nor";
 		reg = <0>;
-		spi-max-frequency = <25000000>;
+		spi-max-frequency = <45000000>;
+		broken-flash-reset;
 
 		partitions {
 			compatible = "fixed-partitions";
@@ -90,7 +91,13 @@
 			partition@50000 {
 				compatible = "denx,uimage";
 				label = "firmware";
-				reg = <0x50000 0xfb0000>;
+				reg = <0x50000 0x1fa0000>;
+			};
+			
+			bdinfo: partition@1ff0000 {
+				label = "bdinfo";
+				reg = <0x1ff0000 0x10000>;
+				read-only;
 			};
 		};
 	};
