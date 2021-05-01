@@ -11,9 +11,9 @@
 name: Yk1-lienol-Build OpenWrt
 
 on:
-  watch:
-    types: started
-#  repository_dispatch:
+#  watch:
+#    types: started
+  repository_dispatch:
 #  workflow_dispatch:
 #    inputs:
 #      ssh:
