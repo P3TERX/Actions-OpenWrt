@@ -25,8 +25,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 rm -rf feeds/custom/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
 
-# 网络接口适配
-sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/g' ./target/linux/ramips/base-files/etc/board.d/02_network
+# 网络接口适配 16m/1, 32m/g
+sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/base-files/etc/board.d/02_network
 
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/hc5962-spi
