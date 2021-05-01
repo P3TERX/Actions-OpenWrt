@@ -91,14 +91,9 @@
 			partition@50000 {
 				compatible = "denx,uimage";
 				label = "firmware";
-				reg = <0x50000 0x1fa0000>;
+				reg = <0x50000 0xfb0000>;
 			};
-			
-			bdinfo: partition@1ff0000 {
-				label = "bdinfo";
-				reg = <0x1ff0000 0x10000>;
-				read-only;
-			};
+
 		};
 	};
 };
