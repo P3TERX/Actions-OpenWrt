@@ -22,8 +22,8 @@ CONFIG_NR_CPUS=128\nCONFIG_FAT_DEFAULT_IOCHARSET="utf8"' {}
 
 #默认主题改为argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
-rm -rf feeds/custom/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
+rm -rf package/feeds/custom/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 
 # 网络接口适配 16m/1, 32m/g
 sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/base-files/etc/board.d/02_network
@@ -32,6 +32,7 @@ cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/hc5962-spi
   DTS := HC5962-SPI
   IMAGE_SIZE := 16121856
+  IMAGES += factory.bin
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   DEVICE_VENDOR := HiWiFi
   DEVICE_TITLE := HC5962-SPI
