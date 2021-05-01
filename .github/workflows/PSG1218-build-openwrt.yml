@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: PSG1218-Build OpenWrt
+name: PSG1218-lienol-Build OpenWrt
 
 on:
 #  watch:
