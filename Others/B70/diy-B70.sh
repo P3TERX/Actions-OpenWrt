@@ -32,6 +32,10 @@ cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/hc5962-spi
   DTS := HC5962-SPI
   IMAGE_SIZE := 33161216
+  IMAGES += factory.bin
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
+	  check-size $$$$(IMAGE_SIZE)
   DEVICE_VENDOR := HiWiFi
   DEVICE_TITLE := HC5962-SPI
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
