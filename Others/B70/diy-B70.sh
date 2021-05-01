@@ -35,7 +35,7 @@ define Device/hc5962-spi
   IMAGES += factory.bin
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
-	  check-size $$$$(IMAGE_SIZE)
+	check-size $$$$(IMAGE_SIZE)
   DEVICE_VENDOR := HiWiFi
   DEVICE_TITLE := HC5962-SPI
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
