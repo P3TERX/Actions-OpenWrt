@@ -45,7 +45,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/fee
 
 B70编译不出squashfs-sysupgrade.bin固件, 此处脚本`IMAGE_SIZE := $(ralink_default_fw_size_16M)`不能引用mt7621.mk中的变量, 直接指定`IMAGE_SIZE := 16064k`就好了.
 B70 16m和32m分别使用了两种闪存布局, 主要是为了备忘. 32m需对除了diy-B70.sh中的修改之外, 还需对dts文件做如下修改:
-```
+``` patch
 -		reg = <0x50000 0xfb0000>;
 +		reg = <0x50000 0x1fa0000>;
 +	};
