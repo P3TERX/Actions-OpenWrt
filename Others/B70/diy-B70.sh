@@ -26,7 +26,7 @@ rm -rf package/feeds/custom/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 
 # 机型名称适配
-sed -i ':a;N;$!ba;s/HC5962/&-SPI")\n\t\tname="hc5962-spi"\n\t\t;;\n\t\*"&/1' target/linux/ramips/base-files/lib/ramips.sh
+sed -i 's/HC5962/&-SPI")\n\t\tname="hc5962-spi"\n\t\t;;\n\t\*"&/1' target/linux/ramips/base-files/lib/ramips.sh
 # 网络接口适配 16m/1, 32m/g
 sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' target/linux/ramips/base-files/etc/board.d/02_network
 
