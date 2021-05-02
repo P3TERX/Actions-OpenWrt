@@ -44,7 +44,7 @@ sed -i 's/^[ \t]*//g' ./target/linux/ramips/image/mt7621.mk
 
 #设置32m闪存
 #sed -i 's/0xfb0000/0x1fa0000/g' target/linux/ramips/dts/HC5962-SPI.dts
-#sed -i 's/fw_size_16M/fw_size_32M/g' target/linux/ramips/image/mt7621.mk
+#sed -i 's/16064k/32384k/g' target/linux/ramips/image/mt7621.mk
 
 # 默认turboacc开启DNS Caching功能
 #sed -i -r "s/(dns_caching )'0'/\1'1'/1" package/feeds/custom/luci-app-turboacc/root/etc/config/turboacc 
