@@ -31,9 +31,7 @@ sed -i ':a;N;$!ba;s/hc5962/&|\\\n\t&-spi/1' ./target/linux/ramips/base-files/etc
 cat >> ./target/linux/ramips/image/mt7621.mk <<EOF
 define Device/hc5962-spi
   DTS := HC5962-SPI
-  IMAGE_SIZE := 16121856
-  IMAGES += factory.bin
-  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_VENDOR := HiWiFi
   DEVICE_TITLE := HC5962-SPI
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
