@@ -29,8 +29,8 @@ sed -i '$a src-git custom https://github.com/garypang13/openwrt-packages' feeds.
 # 修改默认主题为argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 # 替换garypang13源中的argon主题源码
-rm -rf feeds/custom/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custom/luci-theme-argon
+rm -rf package/feeds/custom/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 ```
 
 恩山论坛[@小鸡过河](https://www.right.com.cn/forum/space-uid-370176.html)的固件比较有特色, 尤其是科学上网插件Bypass(~~不是买火车票那个分流抢票~~), 但是他用的是lede 5.4内核分支, 稳定性不及4.14内核, 对硬件性能要求比较高, 7621基本算是最低要求了...
@@ -42,6 +42,19 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/custo
 #### 笔记
 
 固件开机DHCP服务不起效, 原因是5.4内核和4.14内核的resolv.conf(上游DNS配置文件)路径发生了变化, 参见[lede#5158](https://github.com/coolsnowwolf/lede/issues/5158).
+
+B70编译不出squashfs-sysupgrade.bin固件, 此处脚本`IMAGE_SIZE := $(ralink_default_fw_size_16M)`不能引用mt7621.mk中的变量, 直接指定`IMAGE_SIZE := 16064k`就好了.
+B70 16m和32m分别使用了两种闪存布局, 主要是为了备忘. 32m需对除了diy-B70.sh中的修改之外, 还需对dts文件做如下修改:
+```
+-				reg = <0x50000 0xfb0000>;
++				reg = <0x50000 0x1fa0000>;
++			};
++
++			bdinfo: partition@1ff0000 {
++				label = "bdinfo";
++				reg = <0x1ff0000 0x10000>;
++				read-only;
+```
 
 #### 常用广告屏蔽
 
