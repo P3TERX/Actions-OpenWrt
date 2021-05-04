@@ -11,8 +11,8 @@
 name: K2P-lienol-Build OpenWrt
 
 on:
-#  watch:
-#    types: started
+  watch:
+    types: started
   repository_dispatch:
 #  workflow_dispatch:
 #    inputs:
