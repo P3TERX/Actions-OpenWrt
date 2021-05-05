@@ -26,8 +26,8 @@ rm -rf package/feeds/custom/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/custom/luci-theme-argon
 
 # 修复K2P无线丢失错误配置
-sed -i ':a;N;s/Phicomm K2P\nendef/Phicomm\sK2P\n\tDEVICE_PACKAGES := kmod-mt7615d_dbdc\nendef/g;$!ba' target/linux/ramips/image/mt7621.mk
-sed -i 's/^[ \t]*//g' target/linux/ramips/image/mt7621.mk
+#sed -i ':a;N;s/Phicomm K2P\nendef/Phicomm\sK2P\n\tDEVICE_PACKAGES := kmod-mt7615d_dbdc\nendef/g;$!ba' target/linux/ramips/image/mt7621.mk
+#sed -i 's/^[ \t]*//g' target/linux/ramips/image/mt7621.mk
 
 # 默认turboacc开启DNS Caching功能
 #sed -i -r "s/(dns_caching )'0'/\1'1'/1" package/feeds/custom/luci-app-turboacc/root/etc/config/turboacc
