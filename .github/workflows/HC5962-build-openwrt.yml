@@ -11,8 +11,8 @@
 name: HC5962-lienol-Build OpenWrt
 
 on:
-#  watch:
-#    types: started
+  watch:
+    types: started
   repository_dispatch:
 #  workflow_dispatch:
 #    inputs:
