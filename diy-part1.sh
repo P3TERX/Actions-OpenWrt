@@ -14,6 +14,8 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-cd openwrt/pakage && git clone https://github.com/kenzok8/openwrt-packages.git && git clone https://github.com/kenzok8/small.git
+cd package
+git clone https://github.com/kenzok8/openwrt-packages.git
+git clone https://github.com/kenzok8/small.git
 #sed -i '$a src-git small https://github.com/kenzok8/small.git' feeds.conf.default
 #sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages.git' feeds.conf.default
