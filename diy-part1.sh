@@ -14,7 +14,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-cd pakages
+cd pakage
 git clone https://github.com/kenzok8/openwrt-packages.git
 git clone https://github.com/kenzok8/small.git
 #sed -i '$a src-git small https://github.com/kenzok8/small.git' feeds.conf.default
