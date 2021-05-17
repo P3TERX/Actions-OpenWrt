@@ -22,16 +22,24 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git
 git clone https://github.com/fw876/helloworld.git
 git clone https://github.com/destan19/OpenAppFilter.git
 git clone https://github.com/vernesong/OpenClash.git
-#基于DNS的广告过滤 for OpenWrt↓#
+            #基于DNS的广告过滤 for OpenWrt↓#
 #git clone https://github.com/garypang13/luci-app-dnsfilter.git
-#另一种翻墙↓#
+            #另一种翻墙↓#
 #git clone https://github.com/garypang13/luci-app-bypass.git
-#AdGuard home广告过滤↓#
+            #AdGuard home广告过滤↓#
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
-#游戏加速器↓#
+            #游戏加速器↓#
 #git clone https://github.com/esirplayground/luci-app-LingTiGameAcc.git
-#esir的关闭路由器#
+           #esir的关闭路由器↓#
 #git clone https://github.com/esirplayground/luci-app-poweroff.git
+           #定时设置插件↓#
+#git clone https://github.com/sirpdboy/luci-app-autotimeset.git
+           #argon主题↓#
+#git clone https://github.com/jerrykuku/luci-theme-argon.git
+           #一款流量统计插件↓#
+#git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
+           #微信推送↓#
+#git clone https://github.com/tty228/luci-app-serverchan.git
 #git clone https://github.com/superabbite1/luci1.git
 #git clone https://github.com/freifunk/openwrt-packages.git freifunk
 #cd..
