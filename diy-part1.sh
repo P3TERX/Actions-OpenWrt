@@ -21,8 +21,8 @@ git clone https://github.com/kenzok8/small.git
 git clone https://github.com/xiaorouji/openwrt-passwall.git
 git clone https://github.com/fw876/helloworld.git
 git clone https://github.com/destan19/OpenAppFilter.git
-git clone https://github.com/superabbite1/luci1.git
-git clone https://github.com/freifunk/openwrt-packages.git freifunk
+#git clone https://github.com/superabbite1/luci1.git
+#git clone https://github.com/freifunk/openwrt-packages.git freifunk
 #cd..
 #./scripts/feeds clean
 #./scripts/feeds update -a
