@@ -27,9 +27,11 @@ git clone https://github.com/vernesong/OpenClash.git
 git clone https://github.com/garypang13/luci-app-dnsfilter.git
             #另一种翻墙↓#
 git clone https://github.com/garypang13/luci-app-bypass.git
+git clone https://github.com/garypang13/smartdns-le.git
             #AdGuard home广告过滤↓#
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
             #游戏加速器↓#
+git clong https://github.com/esirplayground/LingTiGameAcc.git
 git clone https://github.com/esirplayground/luci-app-LingTiGameAcc.git
            #esir的关闭路由器↓#
 git clone https://github.com/esirplayground/luci-app-poweroff.git
