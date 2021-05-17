@@ -21,6 +21,10 @@ git clone https://github.com/kenzok8/small.git
 git clone https://github.com/xiaorouji/openwrt-passwall.git
 git clone https://github.com/fw876/helloworld.git
 git clone https://github.com/destan19/OpenAppFilter.git
+git clone https://github.com/vernesong/OpenClash.git
+#git clone https://github.com/garypang13/luci-app-dnsfilter.git
+#git clone https://github.com/garypang13/luci-app-bypass.git
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 #git clone https://github.com/superabbite1/luci1.git
 #git clone https://github.com/freifunk/openwrt-packages.git freifunk
 #cd..
