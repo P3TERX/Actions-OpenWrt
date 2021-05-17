@@ -24,8 +24,8 @@ git clone https://github.com/destan19/OpenAppFilter.git
 #git clone https://github.com/superabbite1/luci1.git
 #git clone https://github.com/freifunk/openwrt-packages.git freifunk
 cd..
-./scripts/feeds clean
-./scripts/feeds update -a
-./scripts/feeds install -a
+#./scripts/feeds clean
+#./scripts/feeds update -a
+#./scripts/feeds install -a
 #./scripts/feeds update freifunk
 #./scripts/feeds install -a -p freifunk
