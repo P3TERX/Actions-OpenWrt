@@ -22,8 +22,5 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lea
 #添加adguardhome插件
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
 
-#添加pptp插件
-git clone https://github.com/ZhanhuaJin/luci-app-pptp-server.git package/lean/luci-app-pptp-server
-
 #添加OpenClash插件
 git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
