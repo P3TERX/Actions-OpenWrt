@@ -33,3 +33,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt
 
 #添加pptp插件
 git clone https://github.com/qianmuyixiao/luci-app-pptp-server.git package/lean/luci-app-pptp-server
+
+#添加smartdns插件
+git clone https://github.com/pymumu/luci-app-smartdns.git package/lean/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns.git package/lean/openwrt-smartdns
