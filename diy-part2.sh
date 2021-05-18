@@ -12,3 +12,18 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+
+#删除原来的argon
+rm -rf  package/lean/luci-theme-argon
+
+#添加老竭力的argon主题
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+
+#添加adguardhome插件
+git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
+
+#添加pptp插件
+git clone https://github.com/ZhanhuaJin/luci-app-pptp-server.git package/lean/luci-app-pptp-server
+
+#添加OpenClash插件
+git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
