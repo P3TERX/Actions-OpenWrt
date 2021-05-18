@@ -37,3 +37,8 @@ git clone https://github.com/qianmuyixiao/luci-app-pptp-server.git package/lean/
 #添加smartdns插件
 git clone https://github.com/pymumu/luci-app-smartdns.git package/lean/luci-app-smartdns
 git clone https://github.com/pymumu/openwrt-smartdns.git package/lean/openwrt-smartdns
+
+#添加vssr插件
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
+
