@@ -23,6 +23,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git
 git clone https://github.com/fw876/helloworld.git
 git clone https://github.com/destan19/OpenAppFilter.git
 #git clone https://github.com/vernesong/OpenClash.git
+#git clone https://github.com/Dreamacro/clash.git
             #基于DNS的广告过滤(可不用)↓#
 #git clone https://github.com/garypang13/luci-app-dnsfilter.git
             #另一种翻墙↓#
