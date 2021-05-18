@@ -27,3 +27,6 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean
 
 #添加OpenClash插件
 git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
+
+#添加passwall插件
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
