@@ -16,35 +16,55 @@
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 cd package
+#↓此仓库包内容包括了大部分kenzok8/openwrt-packages中的内容，第一选择#
+git clone https://github.com/liuran001/openwrt-packages.git
+#↓此仓库包为liuran001/openwrt-packages的补充选择#
 #git clone https://github.com/kenzok8/openwrt-packages.git
-git clone https://github.com/superabbite1/openwrt-packages.git
-git clone https://github.com/kenzok8/small.git
-#git clone https://github.com/kenzok8/small-package.git
-git clone https://github.com/xiaorouji/openwrt-passwall.git
-git clone https://github.com/fw876/helloworld.git
-git clone https://github.com/destan19/OpenAppFilter.git
-#git clone https://github.com/vernesong/OpenClash.git
-#git clone https://github.com/Dreamacro/clash.git
-            #基于DNS的广告过滤(可不用)↓#
-#git clone https://github.com/garypang13/luci-app-dnsfilter.git
-            #另一种翻墙↓#
+#git clone https://github.com/superabbite1/openwrt-packages.git
+#↓此仓库包内容基本唯一建议必选#
+git clone https://github.com/Lienol/openwrt-package.git Lienol-package
+#↓此仓库包含了kenzok8/small和xiaorouji/openwrt-passwall，仅缺small里的openssl1.1，第一选择#
+git clone https://github.com/kenzok8/small-package.git
+#git clone https://github.com/kenzok8/small.git
+#git clone https://github.com/xiaorouji/openwrt-passwall.git
+#↓另一种翻墙#
 git clone https://github.com/garypang13/luci-app-bypass.git
 git clone https://github.com/garypang13/smartdns-le.git
-            #AdGuard home广告过滤↓#
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
-            #灵缇游戏加速器（收费的）↓#
+#↓esir的关闭路由器#
+git clone https://github.com/esirplayground/luci-app-poweroff.git
+#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
+git clone https://github.com/sirpdboy/luci-app-autotimeset.git
+#↓一款流量统计插件#
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
+#↓godproxy广告过滤#
+git clone https://github.com/project-lede/luci-app-godproxy.git
+#↓mentohust锐捷认证客户端 不确定是哪个包要测试#
+git clone https://github.com/jing955/Mentohust.git
+#git clone https://github.com/DragonBluep/mentohust-openwrt.git
+#git clone https://github.com/Apocalypsor/Actions-Openwrt-Custom.git
+#↓ddnsto内网穿透 不确定是哪个包要测试#
+git clone https://github.com/linkease/ddnsto-openwrt.git
+#git clone https://github.com/linkease/nas-packages.git
+#beardropper ssh防御脚本#
+git clone https://github.com/NateLol/luci-app-beardropper.git
+#mia 上网时间控制 要测试不确定是否可用#
+git clone https://github.com/awesome-openwrt/luci-app-control-mia.git
+#onliner在线状态#
+git clone https://github.com/rufengsuixing/luci-app-onliner.git
+
+#↓灵缇游戏加速器（收费的）#
 #git clong https://github.com/esirplayground/LingTiGameAcc.git
 #git clone https://github.com/esirplayground/luci-app-LingTiGameAcc.git
-           #esir的关闭路由器↓#
-git clone https://github.com/esirplayground/luci-app-poweroff.git
-           #定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）↓#
-git clone https://github.com/sirpdboy/luci-app-autotimeset.git
-           #argon主题↓#
-git clone https://github.com/jerrykuku/luci-theme-argon.git
-           #一款流量统计插件↓#
-#git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
-           #微信推送↓#
-#git clone https://github.com/tty228/luci-app-serverchan.git
+
+#↓以下仓库独立特定插件单独地址（上面的包里都包含这里只用于单独使用）#
+#git clone https://github.com/fw876/helloworld.git
+#git clone https://github.com/destan19/OpenAppFilter.git
+#git clone https://github.com/vernesong/OpenClash.git
+#git clone https://github.com/Dreamacro/clash.git
+#https://github.com/awesome-openwrt/syncthing.git
+#https://github.com/awesome-openwrt/luci-app-syncthing.git
+
+#↓使用这个freifunk仓库需要以下内容#
 #git clone https://github.com/superabbite1/luci1.git
 #git clone https://github.com/freifunk/openwrt-packages.git freifunk
 #cd..
