@@ -43,4 +43,4 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxmin
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
 
 #添加一键安装到 emmc 脚本
-git clone https://github.com/tuanqing/install-program.git package/lean/install-program
+#git clone https://github.com/tuanqing/install-program.git package/lean/install-program
