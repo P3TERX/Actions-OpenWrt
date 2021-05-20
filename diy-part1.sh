@@ -18,6 +18,13 @@
 cd package
 #↓此仓库包内容包括了大部分kenzok8/openwrt-packages中的内容，第一选择#
 git clone https://github.com/liuran001/openwrt-packages.git
+#↓上面的包有问题的插件暂时删除#
+rm -rf openwrt-packages/adguardhome/
+rm -rf openwrt-packages/luci-app-vssr-plus/
+#↓以下为liuran001/openwrt-packages中用到的依赖包#
+git clone https://github.com/wongsyrone/openwrt-Pcap_DNSProxy.git
+git clone https://github.com/superabbite1/atinout.git
+git clone https://github.com/Leo-Jo-My/diy.git
 #↓此仓库包为liuran001/openwrt-packages的补充选择#
 #git clone https://github.com/kenzok8/openwrt-packages.git
 #git clone https://github.com/superabbite1/openwrt-packages.git
@@ -27,6 +34,8 @@ git clone https://github.com/Lienol/openwrt-package.git Lienol-package
 git clone https://github.com/kenzok8/small-package.git
 #git clone https://github.com/kenzok8/small.git
 #git clone https://github.com/xiaorouji/openwrt-passwall.git
+#↓上面的包有问题的插件暂时删除#
+rm -rf small-package/adguardhome/
 #↓另一种翻墙#
 git clone https://github.com/garypang13/luci-app-bypass.git
 git clone https://github.com/garypang13/smartdns-le.git
