@@ -27,8 +27,12 @@ git clone https://github.com/wongsyrone/openwrt-Pcap_DNSProxy.git
 git clone https://github.com/superabbite1/atinout.git
 git clone https://github.com/Leo-Jo-My/diy.git
 #↓此仓库包为liuran001/openwrt-packages的补充选择#
-#git clone https://github.com/kenzok8/openwrt-packages.git
-#git clone https://github.com/superabbite1/openwrt-packages.git
+git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
+mv kenzok8-packages/luci-app-clash luci-app-clash
+rm -rf kenzok8-packages/
+git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
+mv superabbite1/AdGuardHome AdGuardHome
+rm -rf superabbite1/
 #↓此仓库包内容基本唯一建议必选#
 git clone https://github.com/Lienol/openwrt-package.git Lienol-package
 #↓此仓库包含了kenzok8/small和xiaorouji/openwrt-passwall，仅缺small里的openssl1.1，第一选择#
@@ -37,11 +41,11 @@ git clone https://github.com/kenzok8/small-package.git
 rm -rf small-package/luci-app-clash/
 rm -rf small-package/luci-app-openclash/
 rm -rf small-package/adguardhome/
-#git clone https://github.com/kenzok8/small.git
+git clone https://github.com/kenzok8/small.git
+mv small/openssl1.1 openssl1.1
+rm -rf small/
 #git clone https://github.com/xiaorouji/openwrt-passwall.git
 
-#↓不使用kenzok8/small这个源时要单独使用这个clash #
-git clone https://github.com/frainzy1477/luci-app-clash.git
 #↓esir的关闭路由器#
 git clone https://github.com/esirplayground/luci-app-poweroff.git
 #↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
