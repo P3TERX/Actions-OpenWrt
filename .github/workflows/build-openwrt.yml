@@ -124,7 +124,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: OpenWrt_package
-        path: ./artifact/package/
+        path: openwrt/bin
 
     - name: Organize files
       id: organize
