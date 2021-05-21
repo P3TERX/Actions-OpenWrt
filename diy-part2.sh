@@ -35,8 +35,8 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt
 git clone https://github.com/qianmuyixiao/luci-app-pptp-server.git package/lean/luci-app-pptp-server
 
 #添加smartdns插件
-git clone https://github.com/qianmuyixiao/luci-app-smartdns package/lean/luci-app-smartdns
-git clone https://github.com/qianmuyixiao/smartdns package/lean/smartdns
+git clone https://github.com/qianmuyixiao/luci-app-smartdns package/lean/luci-app-smartdns.git
+git clone https://github.com/qianmuyixiao/smartdns package/lean/smartdns.git
 
 #添加vssr插件
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
