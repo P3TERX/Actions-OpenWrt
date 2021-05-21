@@ -26,6 +26,7 @@ rm -rf openwrt-packages/luci-app-clash/
 git clone https://github.com/wongsyrone/openwrt-Pcap_DNSProxy.git
 git clone https://github.com/superabbite1/atinout.git
 git clone https://github.com/Leo-Jo-My/diy.git
+rm -rf diy/openwrt-dnsforwarder/
 #↓此仓库包为liuran001/openwrt-packages的补充选择#
 git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
 mv kenzok8-packages/luci-app-clash luci-app-clash
@@ -41,6 +42,7 @@ git clone https://github.com/kenzok8/small-package.git
 rm -rf small-package/luci-app-clash/
 rm -rf small-package/luci-app-openclash/
 rm -rf small-package/adguardhome/
+rm -rf small-package/luci-theme-atmaterial_new/
 git clone https://github.com/kenzok8/small.git
 mv small/openssl1.1 openssl1.1
 rm -rf small/
