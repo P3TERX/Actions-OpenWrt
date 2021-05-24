@@ -16,53 +16,37 @@
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 cd package
-#↓此仓库包内容包括了大部分kenzok8/openwrt-packages中的内容，第一选择#
-git clone https://github.com/liuran001/openwrt-packages.git
-#↓上面的包有问题的插件暂时删除#
+#↓此仓库包内容第一选择#
+git clone https://github.com/fszok/fz-package.git
+git clone https://github.com/kenzok8/openwrt-packages.git
+git clone https://github.com/kenzok8/small.git
+git clone https://github.com/xiaorouji/openwrt-passwall.git
+#↓删除问题插件#
 rm -rf openwrt-packages/adguardhome/
-rm -rf openwrt-packages/luci-app-vssr-plus/
-rm -rf openwrt-packages/luci-app-clash/
-#↓以下为liuran001/openwrt-packages中用到的依赖包#
-git clone https://github.com/wongsyrone/openwrt-Pcap_DNSProxy.git
-git clone https://github.com/superabbite1/atinout.git
-git clone https://github.com/Leo-Jo-My/diy.git
-rm -rf diy/openwrt-dnsforwarder/
-#↓此仓库包为liuran001/openwrt-packages的补充选择#
-git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
-mv kenzok8-packages/luci-app-clash luci-app-clash
-rm -rf kenzok8-packages/
+rm -rf openwrt-packages/luci-app-advanced/
+
+#↓添加上面仓库存在问题的替换插件#
 git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
 mv superabbite1/AdGuardHome AdGuardHome
 rm -rf superabbite1/
-#↓此仓库包内容基本唯一建议必选#
-git clone https://github.com/Lienol/openwrt-package.git Lienol-package
-#↓此仓库包含了kenzok8/small和xiaorouji/openwrt-passwall，仅缺small里的openssl1.1，第一选择#
-git clone https://github.com/kenzok8/small-package.git
-#↓上面的包有问题的插件暂时删除#
-rm -rf small-package/luci-app-clash/
-rm -rf small-package/luci-app-openclash/
-rm -rf small-package/adguardhome/
-rm -rf small-package/luci-theme-atmaterial_new/
-git clone https://github.com/kenzok8/small.git
-mv small/openssl1.1 openssl1.1
-rm -rf small/
-#git clone https://github.com/xiaorouji/openwrt-passwall.git
+git clone https://github.com/Lienol/openwrt-package.git lienol-package
+mv lienol-package/luci-app-ipsec-server luci-app-ipsec-server
+mv lienol-package/luci-app-timecontrol luci-app-timecontrol
+rm -rf lienol-package/
 
-#↓esir的关闭路由器#
-git clone https://github.com/esirplayground/luci-app-poweroff.git
+#↓另一种翻墙 在kenzok8/small-package包含#
+git clone https://github.com/garypang13/luci-app-bypass.git
+
 #↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
-git clone https://github.com/sirpdboy/luci-app-autotimeset.git
+#git clone https://github.com/sirpdboy/luci-app-autotimeset.git
 #↓一款流量统计插件#
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
-#↓ddnsto内网穿透 不确定是哪个包要测试#
-git clone https://github.com/linkease/ddnsto-openwrt.git
-#git clone https://github.com/linkease/nas-packages.git
-#beardropper ssh防御脚本#
+#↓beardropper ssh防御脚本#
 git clone https://github.com/NateLol/luci-app-beardropper.git
+#↓IPTV助手#
+git clone https://github.com/riverscn/openwrt-iptvhelper.git
 #mia 上网时间控制 要测试不确定是否可用#
 git clone https://github.com/awesome-openwrt/luci-app-control-mia.git
-#onliner在线状态#
-git clone https://github.com/rufengsuixing/luci-app-onliner.git
 
 #↓灵缇游戏加速器（收费的）#
 #git clong https://github.com/esirplayground/LingTiGameAcc.git
@@ -73,17 +57,13 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 #git clone https://github.com/destan19/OpenAppFilter.git
 #git clone https://github.com/vernesong/OpenClash.git
 #git clone https://github.com/Dreamacro/clash.git
-#https://github.com/awesome-openwrt/syncthing.git
-#https://github.com/awesome-openwrt/luci-app-syncthing.git
-#↓godproxy广告过滤 在kenzok8/small-package包含#
-#git clone https://github.com/project-lede/luci-app-godproxy.git
-#↓mentohust锐捷认证客户端 不确定是哪个包要测试  在kenzok8/small-package包含#
-#git clone https://github.com/jing955/Mentohust.git
-#git clone https://github.com/DragonBluep/mentohust-openwrt.git
-#git clone https://github.com/Apocalypsor/Actions-Openwrt-Custom.git
-#↓另一种翻墙 在kenzok8/small-package包含#
-#git clone https://github.com/garypang13/luci-app-bypass.git
-#git clone https://github.com/garypang13/smartdns-le.git
+#git clone https://github.com/awesome-openwrt/syncthing.git
+#git clone https://github.com/awesome-openwrt/luci-app-syncthing.git
+
+#↓文件助手#
+#git clone https://github.com/awesome-openwrt/luci-app-fileassistant.git
+#高级设置 删除了文件管理器 不会导致冲突#
+#git clone https://github.com/fszok/luci-app-advanced.git
 
 #↓使用这个freifunk仓库需要以下内容#
 #git clone https://github.com/superabbite1/luci1.git
