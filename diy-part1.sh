@@ -37,6 +37,7 @@ rm -rf lienol-package/
 #↓另一种翻墙 在kenzok8/small-package包含#
 git clone https://github.com/garypang13/luci-app-bypass.git
 
+
 #↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
 #git clone https://github.com/sirpdboy/luci-app-autotimeset.git
 #↓一款流量统计插件#
@@ -46,7 +47,7 @@ git clone https://github.com/NateLol/luci-app-beardropper.git
 #↓IPTV助手#
 git clone https://github.com/riverscn/openwrt-iptvhelper.git
 #mia 上网时间控制 要测试不确定是否可用#
-git clone https://github.com/awesome-openwrt/luci-app-control-mia.git
+#git clone https://github.com/awesome-openwrt/luci-app-control-mia.git
 
 #↓灵缇游戏加速器（收费的）#
 #git clong https://github.com/esirplayground/LingTiGameAcc.git
