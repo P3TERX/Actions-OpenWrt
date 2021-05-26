@@ -22,7 +22,16 @@ git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
 rm -rf openwrt-packages/luci-app-tencentddns/
 rm -rf openwrt-packages/luci-app-ddnsto/
 rm -rf openwrt-packages/ddnsto/
+rm -rf openwrt-packages/luci-app-adguardhome/
+rm -rf openwrt-packages/luci-app-dockerman/
+rm -rf openwrt-packages/luci-app-k3screenctrl/
+rm -rf openwrt-packages/luci-app-qosv4/
+rm -rf openwrt-packages/luci-app-speederv2/
+rm -rf openwrt-packages/sub-web/
+rm -rf openwrt-packages/bpytop/
+rm -rf openwrt-packages/luci-app-macvlan/
 #↓保留单独插件#
+mkdir kenzok8
 mv kenzok8-packages/luci-app-clash kenzok8/luci-app-clash
 mv kenzok8-packages/luci-app-easymesh kenzok8/luci-app-easymesh
 mv kenzok8-packages/luci-app-smartdns kenzok8/luci-app-smartdns
@@ -34,6 +43,7 @@ mv kenzok8-packages/luci-theme-opentomcat kenzok8/luci-theme-opentomcat
 mv kenzok8-packages/luci-theme-opentopd kenzok8/luci-theme-opentopd
 mv kenzok8-packages/screenshot kenzok8/screenshot
 mv kenzok8-packages/smartdns kenzok8/smartdns
+mv kenzok8-packages/luci-app-adguardhome kenzok8/luci-app-adguardhome
 rm -rf kenzok8-packages/
 
 #↓添加上面仓库存在问题的替换插件#
@@ -57,6 +67,7 @@ git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 git clone https://github.com/NateLol/luci-app-beardropper.git
 #↓IPTV助手#
 #git clone https://github.com/riverscn/openwrt-iptvhelper.git
+
 
 #↓灵缇游戏加速器（收费的）#
 #git clong https://github.com/esirplayground/LingTiGameAcc.git
