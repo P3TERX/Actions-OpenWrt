@@ -17,37 +17,46 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 cd package
 #↓此仓库包内容第一选择#
-git clone https://github.com/fszok/fz-package.git
-git clone https://github.com/kenzok8/openwrt-packages.git
-git clone https://github.com/kenzok8/small.git
-git clone https://github.com/xiaorouji/openwrt-passwall.git
-#↓删除问题插件#
-rm -rf openwrt-packages/adguardhome/
-rm -rf openwrt-packages/luci-app-advanced/
+git clone https://github.com/garypang13/openwrt-packages.git
+git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
+rm -rf openwrt-packages/luci-app-tencentddns/
+rm -rf openwrt-packages/luci-app-ddnsto/
+rm -rf openwrt-packages/ddnsto/
+#↓保留单独插件#
+mv kenzok8-packages/luci-app-clash kenzok8/luci-app-clash
+mv kenzok8-packages/luci-app-easymesh kenzok8/luci-app-easymesh
+mv kenzok8-packages/luci-app-smartdns kenzok8/luci-app-smartdns
+mv kenzok8-packages/luci-theme-argon_new kenzok8/luci-theme-argon_new
+mv kenzok8-packages/luci-theme-atmaterial kenzok8/luci-theme-atmaterial
+mv kenzok8-packages/luci-theme-ifit kenzok8/luci-theme-ifit
+mv kenzok8-packages/luci-theme-opentomato kenzok8/luci-theme-opentomato
+mv kenzok8-packages/luci-theme-opentomcat kenzok8/luci-theme-opentomcat
+mv kenzok8-packages/luci-theme-opentopd kenzok8/luci-theme-opentopd
+mv kenzok8-packages/screenshot kenzok8/screenshot
+mv kenzok8-packages/smartdns kenzok8/smartdns
+rm -rf kenzok8-packages/
 
 #↓添加上面仓库存在问题的替换插件#
 git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
 mv superabbite1/AdGuardHome AdGuardHome
 rm -rf superabbite1/
-git clone https://github.com/Lienol/openwrt-package.git lienol-package
-mv lienol-package/luci-app-ipsec-server luci-app-ipsec-server
-mv lienol-package/luci-app-timecontrol luci-app-timecontrol
-rm -rf lienol-package/
+git clone https://github.com/kenzok8/small.git
+mv small/openssl1.1 openssl1.1
+rm -rf small/
+#↓ddnsto和linkease#
+git clone https://github.com/linkease/nas-packages.git
+#↓腾讯云ddns 目录在服务菜单中#
+git clone https://github.com/MapesxGM/luci-app-tencentddns.git
+#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，
 
-#↓另一种翻墙 在kenzok8/small-package包含#
-git clone https://github.com/garypang13/luci-app-bypass.git
-
-
-#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
-#git clone https://github.com/sirpdboy/luci-app-autotimeset.git
+然后选择1个使用）#
+git clone https://github.com/sirpdboy/luci-app-autotimeset.git
 #↓一款流量统计插件#
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 #↓beardropper ssh防御脚本#
 git clone https://github.com/NateLol/luci-app-beardropper.git
 #↓IPTV助手#
-git clone https://github.com/riverscn/openwrt-iptvhelper.git
-#mia 上网时间控制 要测试不确定是否可用#
-#git clone https://github.com/awesome-openwrt/luci-app-control-mia.git
+#git clone https://github.com/riverscn/openwrt-iptvhelper.git
 
 #↓灵缇游戏加速器（收费的）#
 #git clong https://github.com/esirplayground/LingTiGameAcc.git
