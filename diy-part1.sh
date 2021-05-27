@@ -44,6 +44,8 @@ git clone https://github.com/MapesxGM/luci-app-tencentddns.git
 git clone https://github.com/fszok/luci-app-advancedsetting.git
 #↓mentohust认证#
 git clone https://github.com/BoringCat/luci-app-mentohust.git
+#↓godproxy广告过滤#
+git clone https://github.com/project-lede/luci-app-godproxy.git
 
 #↓添加上面仓库存在问题的替换插件#
 git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
@@ -65,7 +67,7 @@ git clone https://github.com/riverscn/openwrt-iptvhelper.git
 #↓ddnsto和linkease#
 git clone https://github.com/linkease/nas-packages.git
 #xray server ?#
-#git clone https://github.com/honwen/luci-app-xray.git
+git clone https://github.com/honwen/luci-app-xray.git
 
 #↓灵缇游戏加速器（收费的）#
 #git clong https://github.com/esirplayground/LingTiGameAcc.git
