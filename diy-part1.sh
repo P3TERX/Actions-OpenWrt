@@ -31,9 +31,11 @@ rm -rf openwrt-package/luci-app-control-webrestriction/
 rm -rf openwrt-package/luci-app-control-weburl/
 rm -rf openwrt-package/luci-app-tencentddns/
 rm -rf openwrt-package/luci-app-mentohust/
+#rm -rf openwrt-package/luci-app-syncthing/
 #↓此仓库包内容基本唯一建议必选#
 git clone https://github.com/Lienol/openwrt-package.git Lienol-package
-rm -rf Lienol-package/luci-app-fileassistant/
+rm -rf Lienol-package/luci-app-syncthing/
+
 #高级设置 删除了文件管理器 不会导致冲突#
 git clone https://github.com/fszok/luci-app-advanced.git
 #↓腾讯云ddns 目录在服务菜单中#
