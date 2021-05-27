@@ -31,9 +31,6 @@ git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
 #添加passwall插件
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
 
-#添加pptp插件
-git clone https://github.com/qianmuyixiao/luci-app-pptp-server.git package/lean/luci-app-pptp-server
-
 #添加smartdns插件
 git clone https://github.com/qianmuyixiao/luci-app-smartdns.git package/lean/luci-app-smartdns
 git clone https://github.com/qianmuyixiao/smartdns.git package/lean/smartdns
