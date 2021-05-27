@@ -24,6 +24,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git
 #↓删除问题插件#
 rm -rf openwrt-packages/adguardhome/
 rm -rf openwrt-packages/luci-app-advanced/
+rm -rf openwrt-package/adguardhome/
 rm -rf openwrt-package/luci-app-advanced/
 rm -rf openwrt-package/luci-app-control-timewol/
 rm -rf openwrt-package/luci-app-control-webrestriction/
@@ -43,12 +44,13 @@ git clone https://github.com/fszok/luci-app-advancedsetting.git
 git clone https://github.com/BoringCat/luci-app-mentohust.git
 
 #↓添加上面仓库存在问题的替换插件#
-#git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
-#mv superabbite1/AdGuardHome AdGuardHome
-#rm -rf superabbite1/
+git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
+mv superabbite1/AdGuardHome AdGuardHome
+rm -rf superabbite1/
 
 #↓另一种翻墙 在kenzok8/small-package包含#
 git clone https://github.com/garypang13/luci-app-bypass.git
+git clone https://github.com/garypang13/smartdns-le.git
 
 #↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
 #git clone https://github.com/sirpdboy/luci-app-autotimeset.git
