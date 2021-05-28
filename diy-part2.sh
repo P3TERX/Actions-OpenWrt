@@ -24,7 +24,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/lean/lu
 
 #添加adguardhome插件
 git clone https://github.com/qianmuyixiao/luci-app-adguardhome.git package/lean/luci-app-adguardhome
-git clone https://github.com/qianmuyixiao/adguardhome/tree/main.git package/lean/adguardhome
+git clone https://github.com/qianmuyixiao/adguardhome.git package/lean/adguardhome
 
 #添加OpenClash插件
 git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
