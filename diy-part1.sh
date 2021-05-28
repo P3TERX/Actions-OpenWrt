@@ -33,6 +33,7 @@ rm -rf openwrt-packages/luci-app-control-timewol/
 rm -rf openwrt-packages/luci-app-control-webrestriction/
 rm -rf openwrt-packages/luci-app-control-weburl/
 rm -rf openwrt-packages/luci-app-timecontrol/
+rm -rf openwrt-packages/luci-app-timewol
 #↓保留单独插件#
 git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
 mkdir kenzok8
