@@ -18,7 +18,6 @@
 cd package
 #↓此仓库包内容第一选择#
 git clone https://github.com/garypang13/openwrt-packages.git
-git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
 rm -rf openwrt-packages/luci-app-tencentddns/
 rm -rf openwrt-packages/luci-app-ddnsto/
 rm -rf openwrt-packages/ddnsto/
@@ -30,7 +29,13 @@ rm -rf openwrt-packages/luci-app-speederv2/
 rm -rf openwrt-packages/sub-web/
 rm -rf openwrt-packages/bpytop/
 rm -rf openwrt-packages/luci-app-macvlan/
+rm -rf openwrt-packages/luci-app-control-timewol/
+rm -rf openwrt-packages/luci-app-control-webrestriction/
+rm -rf openwrt-packages/luci-app-control-weburl/
+rm -rf openwrt-packages/luci-app-timecontrol/
+rm -rf openwrt-packages/luci-app-timewol
 #↓保留单独插件#
+git clone https://github.com/kenzok8/openwrt-packages.git kenzok8-packages
 mkdir kenzok8
 mv kenzok8-packages/luci-app-clash kenzok8/luci-app-clash
 mv kenzok8-packages/luci-app-easymesh kenzok8/luci-app-easymesh
@@ -45,6 +50,14 @@ mv kenzok8-packages/screenshot kenzok8/screenshot
 mv kenzok8-packages/smartdns kenzok8/smartdns
 mv kenzok8-packages/luci-app-adguardhome kenzok8/luci-app-adguardhome
 rm -rf kenzok8-packages/
+#↓此仓库包内容管控#
+git clone https://github.com/Lienol/openwrt-package.git Lienol-package
+mkdir lienol
+mv Lienol-package/luci-app-control-timewol/ lienol/luci-app-control-timewol/
+mv Lienol-package/luci-app-control-webrestriction/ lienol/luci-app-control-webrestriction/
+mv Lienol-package/luci-app-control-weburl/ lienol/luci-app-control-weburl/
+mv Lienol-package/luci-app-timecontrol/ lienol/luci-app-timecontrol/
+rm -rf Lienol-package/
 
 #↓添加上面仓库存在问题的替换插件#
 git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
