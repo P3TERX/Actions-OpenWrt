@@ -32,10 +32,14 @@ rm -rf fz-package/luci-app-mentohust/
 rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
 rm -rf fz-package/luci-app-godproxy/
+rm -rf fz-package/luci-app-netdata/
 rm -rf openwrt-packages/adguardhome/
+rm -rf lean/luci-app-netdata/
 
 #↓支取有用的#
-git clone https://github.com/garypang13/openwrt-packages.git garypang13-package
+git clone https://github.com/garypang13/openwrt-packages.git garypang13-
+
+package
 mkdir garypang13
 mv garypang13-package/luci-app-syncthing garypang13/luci-app-syncthing
 mv garypang13-package/luci-app-godproxy garypang13/luci-app-godproxy
@@ -45,7 +49,9 @@ rm -rf garypang13-package/
 git clone https://github.com/Lienol/openwrt-package.git Lienol-package
 rm -rf Lienol-package/luci-app-syncthing/
 
-#高级设置 删除了文件管理器 不会导致冲突#
+#↓netdata#
+git clone https://github.com/sirpdboy/luci-app-netdata.git
+#↓高级设置 删除了文件管理器 不会导致冲突#
 git clone https://github.com/fszok/luci-app-advanced.git
 #↓腾讯云ddns 目录在服务菜单中#
 git clone https://github.com/MapesxGM/luci-app-tencentddns.git
@@ -56,6 +62,9 @@ git clone https://github.com/BoringCat/luci-app-mentohust.git
 #↓godproxy广告过滤#
 git clone https://github.com/project-lede/luci-app-godproxy.git
 
+#测试下#
+git clone https://github.com/yichya/luci-app-xray.git
+
 #↓添加上面仓库存在问题的替换插件#
 git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
 mv superabbite1/AdGuardHome AdGuardHome
@@ -65,14 +74,22 @@ rm -rf superabbite1/
 git clone https://github.com/garypang13/luci-app-bypass.git
 git clone https://github.com/garypang13/smartdns-le.git
 
-#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
+#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，
+
+然后选择1个使用）#
 git clone https://github.com/sirpdboy/luci-app-autotimeset.git
 #↓一款流量统计插件#
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 #↓beardropper ssh防御脚本#
 git clone https://github.com/NateLol/luci-app-beardropper.git
 #↓IPTV助手#
-git clone https://github.com/riverscn/openwrt-iptvhelper.git
+#git clone https://github.com/riverscn/openwrt-iptvhelper.git
+git clone https://github.com/liuran001/openwrt-packages.git liuran001-pack
+mkdir liuran001
+mv liuran001-pack/iptvhelper liuran001/iptvhelper
+mv liuran001-pack/luci-app-iptvhelper liuran001/luci-app-iptvhelper
+rm -rf liuran001-pack/
+
 #↓ddnsto和linkease#
 git clone https://github.com/linkease/nas-packages.git
 #xray server ?#
