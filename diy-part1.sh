@@ -37,9 +37,7 @@ rm -rf openwrt-packages/adguardhome/
 rm -rf lean/luci-app-netdata/
 
 #↓支取有用的#
-git clone https://github.com/garypang13/openwrt-packages.git garypang13-
-
-package
+git clone https://github.com/garypang13/openwrt-packages.git garypang13-package
 mkdir garypang13
 mv garypang13-package/luci-app-syncthing garypang13/luci-app-syncthing
 mv garypang13-package/luci-app-godproxy garypang13/luci-app-godproxy
@@ -74,9 +72,7 @@ rm -rf superabbite1/
 git clone https://github.com/garypang13/luci-app-bypass.git
 git clone https://github.com/garypang13/smartdns-le.git
 
-#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，
-
-然后选择1个使用）#
+#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
 git clone https://github.com/sirpdboy/luci-app-autotimeset.git
 #↓一款流量统计插件#
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
