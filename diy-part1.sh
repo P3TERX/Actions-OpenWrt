@@ -31,11 +31,14 @@ rm -rf fz-package/luci-app-ddnsto/
 rm -rf fz-package/luci-app-mentohust/
 rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
+rm -rf fz-package/luci-app-godproxy/
+rm -rf openwrt-packages/adguardhome/
 
 #↓支取有用的#
 git clone https://github.com/garypang13/openwrt-packages.git garypang13-package
 mkdir garypang13
 mv garypang13-package/luci-app-syncthing garypang13/luci-app-syncthing
+mv garypang13-package/luci-app-godproxy garypang13/luci-app-godproxy
 rm -rf garypang13-package/
 
 #↓此仓库包内容基本唯一建议必选#
@@ -62,9 +65,7 @@ rm -rf superabbite1/
 git clone https://github.com/garypang13/luci-app-bypass.git
 git clone https://github.com/garypang13/smartdns-le.git
 
-#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1
-
-个使用）#
+#↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
 git clone https://github.com/sirpdboy/luci-app-autotimeset.git
 #↓一款流量统计插件#
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
@@ -75,7 +76,7 @@ git clone https://github.com/riverscn/openwrt-iptvhelper.git
 #↓ddnsto和linkease#
 git clone https://github.com/linkease/nas-packages.git
 #xray server ?#
-git clone https://github.com/honwen/luci-app-xray.git
+#git clone https://github.com/honwen/luci-app-xray.git
 
 #↓灵缇游戏加速器（收费的）#
 #git clong https://github.com/esirplayground/LingTiGameAcc.git
