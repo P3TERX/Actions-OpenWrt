@@ -42,6 +42,7 @@ mkdir garypang13
 mv garypang13-package/luci-app-syncthing garypang13/luci-app-syncthing
 mv garypang13-package/luci-app-godproxy garypang13/luci-app-godproxy
 rm -rf garypang13-package/
+mv garypang13/luci-app-syncthing/po/zh_Hans/ garypang13/luci-app-syncthing/po/zh-cn
 
 #↓此仓库包内容基本唯一建议必选#
 git clone https://github.com/Lienol/openwrt-package.git Lienol-package
@@ -60,9 +61,6 @@ git clone https://github.com/BoringCat/luci-app-mentohust.git
 #↓godproxy广告过滤#
 git clone https://github.com/project-lede/luci-app-godproxy.git
 
-#测试下#
-git clone https://github.com/yichya/luci-app-xray.git
-
 #↓添加上面仓库存在问题的替换插件#
 git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
 mv superabbite1/AdGuardHome AdGuardHome
@@ -78,13 +76,15 @@ git clone https://github.com/sirpdboy/luci-app-autotimeset.git
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 #↓beardropper ssh防御脚本#
 git clone https://github.com/NateLol/luci-app-beardropper.git
+mv luci-app-beardropper/po/zh_Hans/ luci-app-beardropper/po/zh-cn
 #↓IPTV助手#
-#git clone https://github.com/riverscn/openwrt-iptvhelper.git
-git clone https://github.com/liuran001/openwrt-packages.git liuran001-pack
-mkdir liuran001
-mv liuran001-pack/iptvhelper liuran001/iptvhelper
-mv liuran001-pack/luci-app-iptvhelper liuran001/luci-app-iptvhelper
-rm -rf liuran001-pack/
+git clone https://github.com/riverscn/openwrt-iptvhelper.git
+mv openwrt-iptvhelper/luci-app-iptvhelper/po/zh_Hans/ openwrt-iptvhelper/luci-app-iptvhelper/po/zh-cn
+#git clone https://github.com/liuran001/openwrt-packages.git liuran001-pack
+#mkdir liuran001
+#mv liuran001-pack/iptvhelper liuran001/iptvhelper
+#mv liuran001-pack/luci-app-iptvhelper liuran001/luci-app-iptvhelper
+#rm -rf liuran001-pack/
 
 #↓ddnsto和linkease#
 git clone https://github.com/linkease/nas-packages.git
