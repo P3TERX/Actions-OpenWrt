@@ -26,7 +26,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luc
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
 
 #添加OpenClash插件
-git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+#git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 
 #添加passwall插件
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
