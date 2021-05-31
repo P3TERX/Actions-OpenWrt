@@ -63,9 +63,9 @@ git clone https://github.com/BoringCat/luci-app-mentohust.git
 git clone https://github.com/project-lede/luci-app-godproxy.git
 
 #↓添加上面仓库存在问题的替换插件#
-git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
-mv superabbite1/AdGuardHome AdGuardHome
-rm -rf superabbite1/
+#git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
+#mv superabbite1/AdGuardHome AdGuardHome
+#rm -rf superabbite1/
 
 #↓另一种翻墙 在kenzok8/small-package包含#
 git clone https://github.com/garypang13/luci-app-bypass.git
