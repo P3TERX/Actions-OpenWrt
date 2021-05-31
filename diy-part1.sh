@@ -34,7 +34,7 @@ rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
 rm -rf fz-package/luci-app-godproxy/
 rm -rf fz-package/luci-app-netdata/
-#rm -rf openwrt-packages/adguardhome/
+rm -rf openwrt-packages/adguardhome/
 rm -rf lean/luci-app-netdata/
 
 #↓支取有用的#
