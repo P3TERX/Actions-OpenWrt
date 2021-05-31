@@ -18,7 +18,8 @@
 cd package
 #↓此仓库包内容第一选择#
 git clone https://github.com/fszok/fz-package.git
-git clone https://github.com/kenzok8/openwrt-packages.git
+#git clone https://github.com/kenzok8/openwrt-packages.git
+git clone https://github.com/superabbite1/openwrt-packages.git
 git clone https://github.com/kenzok8/small.git
 git clone https://github.com/xiaorouji/openwrt-passwall.git
 #↓删除问题插件#
@@ -33,7 +34,7 @@ rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
 rm -rf fz-package/luci-app-godproxy/
 rm -rf fz-package/luci-app-netdata/
-rm -rf openwrt-packages/adguardhome/
+#rm -rf openwrt-packages/adguardhome/
 rm -rf lean/luci-app-netdata/
 
 #↓支取有用的#
@@ -62,9 +63,9 @@ git clone https://github.com/BoringCat/luci-app-mentohust.git
 git clone https://github.com/project-lede/luci-app-godproxy.git
 
 #↓添加上面仓库存在问题的替换插件#
-git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
-mv superabbite1/AdGuardHome AdGuardHome
-rm -rf superabbite1/
+#git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
+#mv superabbite1/AdGuardHome AdGuardHome
+#rm -rf superabbite1/
 
 #↓另一种翻墙 在kenzok8/small-package包含#
 git clone https://github.com/garypang13/luci-app-bypass.git
