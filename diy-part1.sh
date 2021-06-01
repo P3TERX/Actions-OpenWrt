@@ -18,11 +18,9 @@
 cd package
 #↓此仓库包内容第一选择#
 git clone https://github.com/fszok/fz-package.git
-#git clone https://github.com/kenzok8/openwrt-packages.git
-git clone -b 57ea98507b https://github.com/superabbite1/openwrt-packages.git
+git clone https://github.com/kenzok8/openwrt-packages.git
 git clone https://github.com/kenzok8/small.git
-#git clone https://github.com/xiaorouji/openwrt-passwall.git
-git clone -b 111 https://github.com/superabbite1/openwrt-passwall.git
+git clone https://github.com/xiaorouji/openwrt-passwall.git
 #↓删除问题插件#
 rm -rf fz-package/ddnsto/
 rm -rf fz-package/luci-app-aliddns/
@@ -34,8 +32,9 @@ rm -rf fz-package/luci-app-mentohust/
 rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
 rm -rf fz-package/luci-app-godproxy/
-rm -rf fz-package/luci-app-netdata/
-#rm -rf openwrt-packages/adguardhome/
+#rm -rf fz-package/luci-app-netdata/
+rm -rf openwrt-packages/adguardhome/
+rm -rf openwrt-packages/naiveproxy/
 rm -rf lean/luci-app-netdata/
 
 #↓支取有用的#
@@ -51,7 +50,7 @@ git clone https://github.com/Lienol/openwrt-package.git Lienol-package
 rm -rf Lienol-package/luci-app-syncthing/
 
 #↓netdata#
-git clone https://github.com/sirpdboy/luci-app-netdata.git
+#git clone https://github.com/sirpdboy/luci-app-netdata.git
 #↓高级设置 删除了文件管理器 不会导致冲突#
 git clone https://github.com/fszok/luci-app-advanced.git
 #↓腾讯云ddns 目录在服务菜单中#
@@ -64,9 +63,9 @@ git clone https://github.com/BoringCat/luci-app-mentohust.git
 git clone https://github.com/project-lede/luci-app-godproxy.git
 
 #↓添加上面仓库存在问题的替换插件#
-#git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
-#mv superabbite1/AdGuardHome AdGuardHome
-#rm -rf superabbite1/
+git clone https://github.com/superabbite1/openwrt-packages.git superabbite1
+mv superabbite1/AdGuardHome AdGuardHome
+rm -rf superabbite1/
 
 #↓另一种翻墙 在kenzok8/small-package包含#
 git clone https://github.com/garypang13/luci-app-bypass.git
@@ -108,6 +107,11 @@ git clone https://github.com/linkease/nas-packages.git
 #↓使用这个freifunk仓库需要以下内容#
 #git clone https://github.com/superabbite1/luci1.git
 #git clone https://github.com/freifunk/openwrt-packages.git freifunk
+#rm -rf ./feeds
+#make distclean
+#./scripts/feeds clean
+#./scripts/feeds update -a
+#./scripts/feeds install -a
 #cd..
 #rm -rf ./feeds
 #make distclean
