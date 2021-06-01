@@ -32,7 +32,7 @@ rm -rf fz-package/luci-app-mentohust/
 rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
 rm -rf fz-package/luci-app-godproxy/
-#rm -rf fz-package/luci-app-netdata/
+rm -rf fz-package/luci-app-netdata/
 rm -rf openwrt-packages/adguardhome/
 rm -rf openwrt-packages/naiveproxy/
 rm -rf lean/luci-app-netdata/
@@ -51,6 +51,12 @@ rm -rf Lienol-package/luci-app-syncthing/
 
 #↓netdata#
 #git clone https://github.com/sirpdboy/luci-app-netdata.git
+git clone -b 93bd307c73 https://github.com/superabbite1/openwrt-package.git 123123
+mkdir netdata123
+mv 123123/luci-app-netdata netdata123/luci-app-netdata/
+mv 123123/netdata netdata123/netdata/
+rm -rf 123123/
+
 #↓高级设置 删除了文件管理器 不会导致冲突#
 git clone https://github.com/fszok/luci-app-advanced.git
 #↓腾讯云ddns 目录在服务菜单中#
