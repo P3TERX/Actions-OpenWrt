@@ -23,17 +23,17 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-th
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-app-argon-config
 
 #添加adguardhome插件
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
 
 #添加OpenClash插件
-#git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
+git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
 
 #添加passwall插件
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
 
 #添加smartdns插件
-#git clone https://github.com/qianmuyixiao/luci-app-smartdns.git package/lean/luci-app-smartdns
-#git clone https://github.com/qianmuyixiao/smartdns.git package/lean/smartdns
+git clone https://github.com/qianmuyixiao/luci-app-smartdns.git package/lean/luci-app-smartdns
+git clone https://github.com/qianmuyixiao/smartdns.git package/lean/smartdns
 
 #添加vssr插件
 #git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
