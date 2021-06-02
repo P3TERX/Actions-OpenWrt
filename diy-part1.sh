@@ -29,6 +29,7 @@ rm -rf fz-package/luci-app-control-webrestriction/
 rm -rf fz-package/luci-app-control-weburl/
 rm -rf fz-package/luci-app-ddnsto/
 rm -rf fz-package/luci-app-mentohust/
+rm -rf fz-package/openwrt-mentohust/
 rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
 rm -rf fz-package/luci-app-godproxy/
@@ -50,13 +51,7 @@ git clone https://github.com/Lienol/openwrt-package.git Lienol-package
 rm -rf Lienol-package/luci-app-syncthing/
 
 #↓netdata#
-#git clone https://github.com/sirpdboy/luci-app-netdata.git
-git clone -b 93bd307c73 https://github.com/superabbite1/openwrt-package.git 123123
-mkdir netdata123
-mv 123123/luci-app-netdata netdata123/luci-app-netdata/
-mv 123123/netdata netdata123/netdata/
-rm -rf 123123/
-
+git clone https://github.com/sirpdboy/luci-app-netdata.git
 #↓高级设置 删除了文件管理器 不会导致冲突#
 git clone https://github.com/fszok/luci-app-advanced.git
 #↓腾讯云ddns 目录在服务菜单中#
@@ -65,6 +60,7 @@ git clone https://github.com/MapesxGM/luci-app-tencentddns.git
 git clone https://github.com/fszok/luci-app-advancedsetting.git
 #↓mentohust认证#
 git clone https://github.com/BoringCat/luci-app-mentohust.git
+git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git
 #↓godproxy广告过滤#
 git clone https://github.com/project-lede/luci-app-godproxy.git
 
