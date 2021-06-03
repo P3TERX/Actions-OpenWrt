@@ -28,8 +28,8 @@ rm -rf fz-package/luci-app-control-timewol/
 rm -rf fz-package/luci-app-control-webrestriction/
 rm -rf fz-package/luci-app-control-weburl/
 rm -rf fz-package/luci-app-ddnsto/
-rm -rf fz-package/luci-app-mentohust/
-rm -rf fz-package/openwrt-mentohust/
+#rm -rf fz-package/luci-app-mentohust/
+#rm -rf fz-package/openwrt-mentohust/
 rm -rf fz-package/luci-app-syncthing/
 rm -rf fz-package/luci-app-tencentddns/
 rm -rf fz-package/luci-app-godproxy/
@@ -59,8 +59,8 @@ git clone https://github.com/MapesxGM/luci-app-tencentddns.git
 #↓高级设置#
 git clone https://github.com/fszok/luci-app-advancedsetting.git
 #↓mentohust认证#
-git clone https://github.com/BoringCat/luci-app-mentohust.git
-git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git
+#git clone https://github.com/BoringCat/luci-app-mentohust.git
+#git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git
 #↓godproxy广告过滤#
 git clone https://github.com/project-lede/luci-app-godproxy.git
 
