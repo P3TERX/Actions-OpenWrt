@@ -66,6 +66,7 @@ jobs:
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
+        sed -i '$a\src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
