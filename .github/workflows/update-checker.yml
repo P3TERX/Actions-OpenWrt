@@ -12,7 +12,7 @@
 name: Update Checker
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/sitieqiang/openwrt
   REPO_BRANCH: master
 
 on:
