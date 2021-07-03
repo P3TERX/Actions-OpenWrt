@@ -18,7 +18,7 @@
 # git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 
 #========================================================================================================
-svn co https://github.com/liuran001/openwrt-packages/branches/packages/adguardhome package/adguardhome
+svn co https://github.com/liuran001/openwrt-packages/branches/adguardhome package/adguardhome
 # git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 # git clone https://github.com/project-lede/luci-app-godproxy.git package/godproxy
 
