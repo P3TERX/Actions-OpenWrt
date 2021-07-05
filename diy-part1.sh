@@ -18,8 +18,7 @@
 # git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
 
 #========================================================================================================
-svn co https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-adguardhome package/luci-app-adguardhome
-# git clone https://github.com/kongfl888/luci-app-adguardhome.git package/adguardhome
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/adguardhome
 git clone https://github.com/sirpdboy/luci-app-autotimeset.git package/luci-app-autotimeset
 git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 # git clone https://github.com/project-lede/luci-app-godproxy.git package/godproxy
