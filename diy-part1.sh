@@ -47,6 +47,20 @@ rm -rf kiddin9-package/
 git clone https://github.com/Lienol/openwrt-package.git Lienol-package
 rm -rf Lienol-package/luci-app-syncthing/
 
+#↓IPTV助手#
+git clone https://github.com/kenzok8/small-package.git kenzok8-smallpackage
+mkdir smallpackage111
+mv kenzok8-smallpackage/iptvhelper smallpackage111/iptvhelper
+mv kenzok8-smallpackage/luci-app-iptvhelper smallpackage111/luci-app-iptvhelper
+rm -rf kenzok8-smallpackage/
+#git clone https://github.com/riverscn/openwrt-iptvhelper.git
+#mv openwrt-iptvhelper/luci-app-iptvhelper/po/zh_Hans/ openwrt-iptvhelper/luci-app-iptvhelper/po/zh-cn
+#git clone https://github.com/liuran001/openwrt-packages.git liuran001-pack
+#mkdir liuran001
+#mv liuran001-pack/iptvhelper liuran001/iptvhelper
+#mv liuran001-pack/luci-app-iptvhelper liuran001/luci-app-iptvhelper
+#rm -rf liuran001-pack/
+
 #↓netdata#
 git clone https://github.com/sirpdboy/luci-app-netdata.git
 #↓高级设置 删除了文件管理器 不会导致冲突#
@@ -71,14 +85,6 @@ git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 #↓beardropper ssh防御脚本#
 git clone https://github.com/NateLol/luci-app-beardropper.git
 mv luci-app-beardropper/po/zh_Hans/ luci-app-beardropper/po/zh-cn
-#↓IPTV助手#
-git clone https://github.com/riverscn/openwrt-iptvhelper.git
-mv openwrt-iptvhelper/luci-app-iptvhelper/po/zh_Hans/ openwrt-iptvhelper/luci-app-iptvhelper/po/zh-cn
-#git clone https://github.com/liuran001/openwrt-packages.git liuran001-pack
-#mkdir liuran001
-#mv liuran001-pack/iptvhelper liuran001/iptvhelper
-#mv liuran001-pack/luci-app-iptvhelper liuran001/luci-app-iptvhelper
-#rm -rf liuran001-pack/
 
 #↓ddnsto和linkease#
 git clone https://github.com/linkease/nas-packages.git
