@@ -43,7 +43,7 @@ mv kiddin9-package/luci-app-syncthing kiddin9/luci-app-syncthing
 mv kiddin9-package/luci-app-godproxy kiddin9/luci-app-godproxy
 rm -rf kiddin9-package/
 
-#↓此仓库包内容基本唯一建议必选#
+#↓此仓库包在kenzok8/small-package包含（这个包还未验证是否涵盖以上插件,初步看来比这个新可能也涵盖了fszok/fz-package里面的，截至2021年11月04日）#
 git clone https://github.com/Lienol/openwrt-package.git Lienol-package
 rm -rf Lienol-package/luci-app-syncthing/
 
@@ -61,8 +61,8 @@ git clone https://github.com/fszok/luci-app-advancedsetting.git
 #↓godproxy广告过滤上面已有暂时不用这个#
 #git clone https://github.com/project-lede/luci-app-godproxy.git
 
-#↓另一种翻墙 在kenzok8/small-package包含（这个包还未验证是否涵盖以上插件截至2021年11月04日）#
-git clone https://github.com/garypang13/luci-app-bypass.git
+#↓另一种翻墙，已经再其他库中包含 #
+#git clone https://github.com/garypang13/luci-app-bypass.git
 
 #↓定时设置插件（比自带的autoreboot功能多一些，二选一，也可同时选择编译成功，然后选择1个使用）#
 git clone https://github.com/sirpdboy/luci-app-autotimeset.git
